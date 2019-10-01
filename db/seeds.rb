@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+Brewery.delete_all
+Beer.delete_all
+
+load 'db/seeds/users.rb'
+load 'db/seeds/breweries.rb'
+# load 'db/seeds/beers.rb'
+  

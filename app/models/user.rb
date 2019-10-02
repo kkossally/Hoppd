@@ -9,17 +9,27 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  f_name          :string           not null
+#  l_name          :string           not null
+#  birthday        :string           not null
 #
 
 class User < ApplicationRecord
-  attr_reader :password
+  attr_reader :password, :password_confirmation
   
   validates :username, :email, :session_token, presence: true, uniqueness: true
-  validates :password_digest, :f_name, :l_name, presence: true
-  validates :password, length: { minimum: 6 }, allow_nil: true
+  validates :password_digest, :f_name, :l_name, :birthday, presence: true
+  validates :password, length: { minimum: 5 }, allow_nil: true
+  validate :password_confirmation_match
 
 
   after_initialize :ensure_session_token
+
+  def password_confirmation_match
+    if password.present? && password != password_confirmation
+      errors.add(:passwords, "must match.")
+    end
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

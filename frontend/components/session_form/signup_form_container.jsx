@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import { signup, clearSessionErrors } from '../../actions/session_actions';
+import SignupForm from './signup_form';
 
-const msp = ({ errors }) => {
+const msp = ({ errors: { session } }) => {
   return {
-    errors: errors,
+    errors: session,
     formType: 'Create Account',
   }
 }
@@ -12,7 +12,8 @@ const msp = ({ errors }) => {
 const mdp = dispatch => {
   return {
     submitForm: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearSessionErrors()),
   }
 }
 
-export default connect(msp, mdp)(SessionForm);
+export default connect(msp, mdp)(SignupForm);

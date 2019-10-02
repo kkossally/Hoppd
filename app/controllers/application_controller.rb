@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
   helper_method :current_user, :logged_in?
 
   private
@@ -19,6 +21,12 @@ class ApplicationController < ActionController::Base
     unless current_user
       render json: ["Please login"], status: 401
     end
+  end
+
+  def logout
+    current_user.reset_session_token!
+    session[:session_token] = nil
+    @current_user = nil
   end
 
 end

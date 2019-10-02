@@ -1,9 +1,8 @@
 class Api::SessionsController < ApplicationController
-   def create
-    @user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
-    )
+  skip_before_action :verify_authenticity_token
+  
+  def create
+    @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 
     if @user
       login(@user)
@@ -19,7 +18,7 @@ class Api::SessionsController < ApplicationController
       logout
       render "api/users/show"
     else
-      render json: ["Please sign in"], status: 404
+      render json: ["No one to logout"], status: 404
     end
   end
 end

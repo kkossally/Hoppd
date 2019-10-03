@@ -7,8 +7,9 @@ import LoginFormContainer from './session_form/login_form_container';
 
 const App = () => (
   <div>
-    <div className="masthead">
-      <GreetingContainer />
+    <div>
+      <Route exact path="/" component={GreetingContainer}></Route>
+      {/* <GreetingContainer /> */}
     </div>
     <div>
       <AuthRoute exact path="/login" component={LoginFormContainer} />

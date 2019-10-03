@@ -18,7 +18,7 @@ const logoutCurrentUser = () => {
   }
 }
 
-const receiveSessionErrors = sessionErrors => {
+export const receiveSessionErrors = sessionErrors => {
   return {
     type: RECEIVE_SESSION_ERRORS,
     sessionErrors,
@@ -41,6 +41,6 @@ export const login = user => dispatch => {
   .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors.responseJSON)));
 }
 
-export const logout = () => dispatch =>{
+export const logout = () => dispatch => {
   return SessionApiUtil.logout().then(() => dispatch(logoutCurrentUser()));
 }

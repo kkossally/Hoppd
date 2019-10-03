@@ -17,24 +17,30 @@ export default ({currentUser, logout}) => {
   const sessionLinks = () => {
     return (
       <div className="masthead">
-        <header>
-          <Link to='/signup'>Create An Account</Link>
-          <Link to='/login'>Sign In</Link>
-        </header>
+        
+        <div className="masthead-inner">
+          
+          <header>
+            <Link to='/signup'>Create An Account</Link>
+            <Link to='/login'>Sign In</Link>
+          </header>
 
-        <div className="content">
-          <section className="left">
-            <img className="logo" src="../../assets/ut-logo-bottles.svg" alt="logo"/>
-            <h1>Hoppd</h1>
-            <h3>Drink Like There's No Tomorrow</h3>
-            <div className="short-rule"/>
-            <h2>Discover and share the best beer.</h2>
-          </section>
+          <div className="masthead-inner-content">
+            <section>
+              <img className="ut-logo-bottles" src="../../assets/ut_logo_bottles.svg" alt="Logo"/>
+              <h1>Hoppd</h1>
+              <h3>Don't worry be hoppy</h3>
+              <div className="short-rule"/>
+              <h2>Discover and share the best beer.</h2>
+            </section>
 
-          <section className="right">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          </section>
+            <section className="masthead-inner-content-right">
+              <img className="cellphone-image" src="../../assets/cellphone_image.png" alt="Cellphone Image"/>
+            </section>
+          </div>
+
         </div>
+        
       </div>
     )
   }

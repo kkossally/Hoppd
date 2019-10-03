@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+
+  list-style: none;
+}
+
+title {
+  display: none;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  /* background-color: lightgray; */
+  color: black;
+}
+
+.masthead {
+  position: relative;
+  height: 700px;
+  width: 100%;
+}
+
+.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 700px;
+  background-image: url('brklyn_tap.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+}
+
+.masthead-inner {
+  position: relative;
+}
+
+.masthead-inner header {
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  text-align: center;
+}
+
+.masthead-inner header > a {
+  margin-right: 15px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  line-height: 50%;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+}
+.masthead-inner header > a:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.masthead-inner-content {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.masthead-inner-content > section {
+  padding-top: 5%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.masthead-inner-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.masthead-inner-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.masthead-inner-content h2 {
+  margin: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.short-rule {
+  margin: 0 auto;
+  width: 50px;
+  height: 4px;
+  background: #ffc000;
+}
+
+.masthead-inner-content-right {
+ padding-top: 0;
+}
+
+.cellphone-image {
+  width: 100%;
+  height: 100%;
+}

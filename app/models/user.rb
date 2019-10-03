@@ -20,16 +20,18 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, :f_name, :l_name, :birthday, presence: true
   validates :password, length: { minimum: 5 }, allow_nil: true
-  validate :password_confirmation_match
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
+  # validate :password_confirmation_match
 
 
   after_initialize :ensure_session_token
 
-  def password_confirmation_match
-    if password.present? && password != password_confirmation
-      errors.add(:passwords, "must match.")
-    end
-  end
+  # def password_confirmation_match
+  #   if password.present? && password != password_confirmation
+  #     errors.add(:passwords, "must match.")
+  #   end
+  # end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

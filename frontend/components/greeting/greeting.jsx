@@ -25,7 +25,7 @@ export default () => {
 
       <div className="masthead-inner-content">
         <section>
-          <img className="ut-logo-bottles" src="../../assets/ut_logo_bottles.svg" alt="Logo"/>
+          <img className="ut-logo-bottles" src={window.utLogoBottlesURL} alt="Logo"/>
           <h1>Hoppd</h1>
           <h3>Don't worry, be hoppy</h3>
           <div className="short-rule"/>
@@ -33,7 +33,7 @@ export default () => {
         </section>
 
         <section className="masthead-inner-content-right">
-          <img className="cellphone-image" src="../../assets/cellphone_image.png" alt="Cellphone Image"/>
+          <img className="cellphone-image" src={window.cellphoneImageURL} alt="Cellphone Image"/>
         </section>
       </div>
 

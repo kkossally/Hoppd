@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+
+  list-style: none;
+}
+
+title {
+  display: none;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: lightgray;
+  color: black;
+}
+
+.masthead {
+  width: 100%;
+  background-color: palegoldenrod;
+}
+
+.masthead header {
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: palevioletred;
+  text-align: center;
+}
+
+.masthead header > a {
+  margin-right: 15px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  line-height: 50%;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+}
+.masthead header > a:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.content {
+  height: 600px;
+  background-color: palegreen;
+
+}
+
+.content > section {
+
+}

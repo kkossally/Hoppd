@@ -5,17 +5,33 @@ export default ({currentUser, logout}) => {
   const greeting = () => {
     return (
       <div>
-        <h3>Hello {currentUser.f_name}</h3>
-        <button onClick={logout}>Logout</button>
+        <header>
+          <h3>Hello {currentUser.f_name}</h3>
+          <button onClick={logout}>Logout</button>
+        </header>
       </div>
+      
     )
   }
 
   const sessionLinks = () => {
     return (
       <div>
-        <Link to='/login'>Sign In</Link>
-        <Link to='/signup'>Create An Account</Link>
+        <header>
+          <Link to='/signup'>Create An Account</Link>
+          <Link to='/login'>Sign In</Link>
+        </header>
+
+
+        <div className="content">
+          <section className="left">
+            <h1>Hoppd</h1>
+            <h3>Drink Like There's No Tomorrow</h3>
+          </section>
+
+          <section className="right">
+          </section>
+        </div>
       </div>
     )
   }

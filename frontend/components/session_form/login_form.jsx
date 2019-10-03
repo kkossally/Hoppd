@@ -40,12 +40,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="masthead-inner login-box" >
-        {/* <section className="logo-box"> */}
-          <Link className="logo-box" to='/'>
-            <h1>Hoppd</h1>
-            <h3>Don't worry, be hoppy</h3>
-          </Link>
-        {/* </section> */}
+        <Link className="logo-box" to='/'>
+          <h1>Hoppd</h1>
+          <h3>Be hoppy</h3>
+        </Link>
 
         <form onSubmit={this.handleSubmit}>
           

@@ -1,0 +1,58 @@
+.login-box {
+  width: 400px;
+  border: 2px solid white;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+}
+
+.login-box form > {
+  width: 300px;
+}
+
+.logo-box h1 {
+  color: #3f4040;
+}
+
+.logo-box h3 {
+  color: #909090;
+}
+
+.login-box form {
+  /* width: 360px; */
+  display: flex;
+  flex-direction: column;
+  color: #cccccc;
+}
+
+.login-box .textbox {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  color: black;
+}
+
+.login-box .submit {
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: white;
+}
+
+.login-box .submit:hover {
+  background-color: #f4b800;
+  cursor: pointer
+}
+
+.login-box .bottom a {
+  color: #c60;
+}
+
+.login-box .bottom {
+  width: 300px;
+  color: #666666;
+}
+
+::placeholder {
+  color: #cccccc;
+}

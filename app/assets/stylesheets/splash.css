@@ -85,14 +85,14 @@ body {
   color: white;
 }
 
-.masthead-inner-content h1 {
+.masthead-inner-content h1, .logo-box h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.masthead-inner-content h3 {
+.masthead-inner-content h3, .logo-box h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   margin-bottom: 10px;
@@ -101,7 +101,7 @@ body {
 
 .masthead-inner-content h2 {
   margin: 20px;
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
 }
 
@@ -112,9 +112,9 @@ body {
   background: #ffc000;
 }
 
-.masthead-inner-content-right {
+/* .masthead-inner-content-right {
  padding-top: 0;
-}
+} */
 
 .cellphone-image {
   width: 100%;

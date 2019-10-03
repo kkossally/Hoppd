@@ -60,12 +60,13 @@ class SignupForm extends React.Component {
   render() {
     const {username, email, password, passwordConfirmation, f_name, l_name, month, day, year} = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Link to='/'>
-          <h1>Hoppd</h1>
-          <h4>Drink Like There's No Tomorrow</h4>
-        </Link>
-        {this.renderErrors()}
+      <div className="masthead-inner">
+        <form onSubmit={this.handleSubmit}>
+          <Link to='/'>
+            <h1>Hoppd</h1>
+            <h4>Drink Like There's No Tomorrow</h4>
+          </Link>
+          {this.renderErrors()}
           <input type="text" value={username} placeholder='Username' onChange={this.update('username')} />
           <input type="text" value={email} placeholder='Email Address' onChange={this.update('email')} />
 
@@ -75,17 +76,18 @@ class SignupForm extends React.Component {
           <input type="text" value={f_name} placeholder='First Name' onChange={this.update('f_name')} />
           <input type="text" value={l_name} placeholder='Last Name' onChange={this.update('l_name')} />
 
-        <label>
-          Birthday:
-          <input type="text" value={month} placeholder='MM' onChange={this.update('month')}/>
-          <input type="text" value={day} placeholder='DD' onChange={this.update('day')}/>
-          <input type="text" value={year} placeholder='YYYY' onChange={this.update('year')}/>
-        </label>
+          <label>
+            Birthday:
+            <input type="text" value={month} placeholder='MM' onChange={this.update('month')} />
+            <input type="text" value={day} placeholder='DD' onChange={this.update('day')} />
+            <input type="text" value={year} placeholder='YYYY' onChange={this.update('year')} />
+          </label>
 
-        <input type="submit" value={this.props.formType} />
+          <input type="submit" value={this.props.formType} />
 
-        {this.renderSignUpLink()}
-      </form>
+          {this.renderSignUpLink()}
+        </form>
+      </div>
     )
   }
 }

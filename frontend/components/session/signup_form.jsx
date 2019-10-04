@@ -33,7 +33,10 @@ class SignupForm extends React.Component {
   }
 
   update(field){
-    return event => this.setState({ [field]: event.target.value })
+    return event => {
+      event.target.classList.remove('empty');
+      this.setState({ [field]: event.target.value })
+    }
   }
 
   handleSubmit(event) {
@@ -43,7 +46,7 @@ class SignupForm extends React.Component {
     const birthday = year + month + day;
     const user = Object.assign({}, this.state, { birthday });
     if (this.state.password === this.state.password_confirmation) {
-      this.props.submitForm(user).then(() => this.props.history.push("/"));
+      this.props.submitForm(user);
     } else {
       this.props.dispatchErrors(['Please confirm your password.']);
     }

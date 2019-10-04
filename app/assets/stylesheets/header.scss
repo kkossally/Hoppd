@@ -1,0 +1,67 @@
+header.home {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background: #ffcc00;
+}
+
+.navbar {
+  height: 50px;
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  justify-content: space-between;
+  
+  // background: cadetblue;
+  
+  line-height: 50px;
+  font-size: 18px;
+  color: white;
+}
+
+.home .logo-box {
+  // margin-right: 50px;
+  line-height: normal;
+}
+
+.home-logo-box h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.home .logo-box h3 {
+  font-size: 10px;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  position: relative;
+  left: -30px;
+  // margin-right: 170px;
+}
+
+.profile-dropdown {
+  line-height: 75px;
+}
+
+.profile-dropdown img {
+  height: 35px;
+  position: relative;
+  left: 70px;
+}
+
+.home .search-container {
+  margin-right: 10px;
+  height: 35px;
+  width: 240px;
+  align-self: center;
+  border-radius: 5px;
+  background: white;
+}

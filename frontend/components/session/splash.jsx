@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default () => {
   return (
     <div className="splash-masthead">
-      <div className="masthead-inner">
+      <div className="masthead-inner masthead-inner-splash">
             
         <header>
           <Link to='/signup'>Create An Account</Link>

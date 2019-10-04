@@ -24,7 +24,7 @@ body {
   color: black;
 }
 
-.greeting-masthead, .session-masthead {
+.splash-masthead, .session-masthead {
   position: relative;
   height: 700px;
   width: 100%;
@@ -33,7 +33,7 @@ body {
   align-items: center;
 }
 
-.greeting-masthead::before, .session-masthead::before {
+.splash-masthead::before, .session-masthead::before {
   content: "";
   position: absolute;
   top: 0; left: 0;

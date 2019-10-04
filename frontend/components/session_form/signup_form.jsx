@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { range } from 'lodash';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class SignupForm extends React.Component {
       username: "",
       email: "", 
       password: "",
-      passwordConfirmation: "",
+      password_confirmation: "",
       f_name: "",
       l_name: "",
       year: "",
@@ -16,6 +17,15 @@ class SignupForm extends React.Component {
       day: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.dateNumeralList = this.dateNumeralList.bind(this);
+  }
+
+  dateNumeralList(min, max) {
+    return range(min, max + 1).map(num => {
+      return num < 10 ? '0' + num : num;
+    }).map(num => {
+      return <option key={num} value={num}>{num}</option>
+    })
   }
 
   componentWillUnmount() {
@@ -32,6 +42,7 @@ class SignupForm extends React.Component {
     const {year, month, day} = this.state;
     const birthday = year + month + day;
     const user = Object.assign({}, this.state, { birthday });
+    // debugger
     this.props.submitForm(user);
     // if (this.state.password !== this.state.passwordConfirmation) {
     //   this.props.dispatchErrors(['Please confirm your password.']);
@@ -53,39 +64,59 @@ class SignupForm extends React.Component {
     )
   }
 
-  renderSignUpLink() {
-    return this.props.formType === 'Sign In' ? (<h3>New around here? {this.props.signUpLink}</h3>) : null;
-  }
-
   render() {
-    const {username, email, password, passwordConfirmation, f_name, l_name, month, day, year} = this.state;
+    const {username, email, password, password_confirmation, f_name, l_name } = this.state;
     return (
-      <div className="masthead-inner">
+      <div className="masthead-inner signup-box">
+        <Link className="logo-box" to='/'>
+          <h1>Hoppd</h1>
+          <h3>Be hoppy</h3>
+        </Link>
+
+        {this.renderErrors()}
+
+        <p className="field-req" >All fields below are required.</p>
+
         <form onSubmit={this.handleSubmit}>
-          <Link to='/'>
-            <h1>Hoppd</h1>
-            <h4>Drink Like There's No Tomorrow</h4>
-          </Link>
-          {this.renderErrors()}
-          <input type="text" value={username} placeholder='Username' onChange={this.update('username')} />
-          <input type="text" value={email} placeholder='Email Address' onChange={this.update('email')} />
 
-          <input type="password" value={password} placeholder='Password' onChange={this.update('password')} />
-          <input type="password" value={passwordConfirmation} placeholder='Repeat Password' onChange={this.update('passwordConfirmation')} />
-
-          <input type="text" value={f_name} placeholder='First Name' onChange={this.update('f_name')} />
-          <input type="text" value={l_name} placeholder='Last Name' onChange={this.update('l_name')} />
+          <div className="info-section">
+            <input className="textbox" type="text" value={username} placeholder='Username' onChange={this.update('username')} />   
+            <input className="textbox" type="text" value={email} placeholder='Email Address' onChange={this.update('email')} />
+            
+            <p className="pass-req">Avoid using common phrases and include a mix of letter and numbers.</p>
+           
+            <input className="textbox" type="password" value={password} placeholder='Password' onChange={this.update('password')} />
+            <input className="textbox" type="password" value={password_confirmation} placeholder='Repeat Password' onChange={this.update('password_confirmation')} />
+          </div>
+          
+          
+          <div className="info-section">
+            <input className="textbox" type="text" value={f_name} placeholder='First Name' onChange={this.update('f_name')} />
+          <input className="textbox" type="text" value={l_name} placeholder='Last Name' onChange={this.update('l_name')} />
 
           <label>
             Birthday:
-            <input type="text" value={month} placeholder='MM' onChange={this.update('month')} />
-            <input type="text" value={day} placeholder='DD' onChange={this.update('day')} />
-            <input type="text" value={year} placeholder='YYYY' onChange={this.update('year')} />
+              <select className="select-date" name="month" onChange={this.update('month')}>
+                <option value="selected">MM</option>
+                {this.dateNumeralList(1, 12)}
+              </select>
+
+              <select className="select-date" name="day" onChange={this.update('day')}>
+                <option value="selected">DD</option>
+                {this.dateNumeralList(1, 31)}
+              </select>
+
+              <select className="select-date" name="day" onChange={this.update('year')}>
+                <option value="selected">YYYY</option>
+                {this.dateNumeralList(1900, 2010).reverse()}
+              </select>
           </label>
+          </div>
 
-          <input type="submit" value={this.props.formType} />
+          <p className="terms">You must be of legal drinking age to join Hoppd.</p>
 
-          {this.renderSignUpLink()}
+          <input className="submit" type="submit" value={this.props.formType} />
+          
         </form>
       </div>
     )

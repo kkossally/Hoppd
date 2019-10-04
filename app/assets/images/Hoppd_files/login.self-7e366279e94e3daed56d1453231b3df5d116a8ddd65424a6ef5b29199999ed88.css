@@ -1,9 +1,8 @@
+/* line 1, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box {
   margin: 0 auto;
   padding: 24px 16px;
   width: 400px;
-  // border: 2px solid white;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,19 +10,22 @@
   background: white;
 }
 
+/* line 14, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .logo-box {
   text-align: center;
 }
 
-
+/* line 19, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .logo-box h1 {
   color: #3f4040;
 }
 
+/* line 23, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .logo-box h3 {
   color: #909090;
 }
 
+/* line 27, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box form {
   width: 360px;
   display: flex;
@@ -32,10 +34,12 @@
   color: #cccccc;
 }
 
+/* line 35, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box form > {
   width: 300px;
 }
 
+/* line 39, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box .textbox {
   margin-bottom: 8px;
   padding: 8px;
@@ -45,6 +49,7 @@
   color: black;
 }
 
+/* line 48, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box .submit, .logout-button {
   padding: 12px;
   border-radius: 5px;
@@ -55,24 +60,27 @@
   z-index: 2;
 }
 
+/* line 58, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box .submit:hover, .logout {
   background-color: #f4b800;
-  cursor: pointer
+  cursor: pointer;
 }
 
+/* line 63, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box .bottom a {
   color: #c60;
 }
 
+/* line 67, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 .login-box .bottom {
   margin-top: 16px;
   width: 300px;
   display: flex;
   justify-content: center;
-  // text-align: center;
   color: #666666;
 }
 
+/* line 76, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/login.scss */
 ::placeholder {
   color: #cccccc;
 }

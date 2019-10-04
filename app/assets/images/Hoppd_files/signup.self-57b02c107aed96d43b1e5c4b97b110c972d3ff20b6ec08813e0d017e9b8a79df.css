@@ -1,0 +1,62 @@
+/* line 1, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.signup-box {
+  margin: 0 auto;
+  padding: 24px 16px;
+  width: 600px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+/* line 14, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.signup-box form {
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #cccccc;
+}
+
+/* line 22, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.signup-box form > {
+  width: 570px;
+}
+
+/* line 26, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.info-section {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* line 34, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.signup-box .textbox, .select-date {
+  margin-bottom: 8px;
+  padding: 8px;
+  width: 45%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
+}
+
+/* line 44, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.signup-box .submit {
+  padding: 12px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+/* line 54, /Users/aa/Desktop/Hoppd/app/assets/stylesheets/signup.scss */
+.singnup-box .submit:hover {
+  background-color: #f4b800;
+  cursor: pointer;
+}

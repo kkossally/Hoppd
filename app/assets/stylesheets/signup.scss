@@ -9,36 +9,62 @@
   justify-content: center;
   align-items: center;
   background: white;
+
+  font-size: 14px;
 }
 
 .signup-box form {
   width: 570px;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  color: #cccccc;
+  align-items: center;
+  color: #666666;
 }
 
 .signup-box form > {
+  margin-top: 20px;
   width: 570px;
 }
 
 .info-section {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  // width: 100%;
 }
 
 .signup-box .textbox, .select-date {
   margin-bottom: 8px;
   padding: 8px;
   width: 45%;
+  height: 33px;
   border: 1px solid #cccccc;
   border-radius: 5px;
   font-size: 16px;
   color: black;
+}
+
+.select-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+.select-date select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select-span {
+  position: relative;
+}
+
+.select-span::after {
+  margin: 0 10px 0 5px;
+  content: "▼";
+  color: #ffcc00;
+  font-size: 11px;
 }
 
 .signup-box .submit {
@@ -54,4 +80,23 @@
 .singnup-box .submit:hover {
   background-color: #f4b800;
   cursor: pointer;
+}
+
+.field-req {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #666666;
+  font-weight: bold;
+}
+
+.pass-req {
+  margin-bottom: 10px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.terms {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 11px;
 }

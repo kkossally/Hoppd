@@ -24,39 +24,45 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, index) => {
-          return (
-            <li key={`error-${index}`}>
-              {error}
-            </li>
-          )
-        })}
-      </ul>
-    )
+    if (this.props.errors.length > 0) {
+      return (
+        <div className="errors">
+          <ul>
+            {this.props.errors.map((error, index) => {
+              return (
+                <li key={`error-${index}`}>
+                  {error}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
   }
 
   render() {
     return (
-      <div className="masthead-inner login-box" >
-        <Link className="logo-box" to='/'>
-          <h1>Hoppd</h1>
-          <h3>Be hoppy</h3>
-        </Link>
+      <div className="session-masthead">
+        <div className="masthead-inner login-box" >
+          <Link className="logo-box" to='/'>
+            <h1>Hoppd</h1>
+            <h3>Be hoppy</h3>
+          </Link>
 
-        <form onSubmit={this.handleSubmit}>
-          
-          {this.renderErrors()}
+          <form onSubmit={this.handleSubmit}>
+            
+            {this.renderErrors()}
 
-          <input className="textbox" type="text" value={this.state.username} placeholder='Username' onChange={this.update('username')}/>
-          <input className="textbox" type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
-          <input className="submit" type="submit" value={this.props.formType}/>
-        </form>
+            <input className="textbox" type="text" value={this.state.username} placeholder='Username' onChange={this.update('username')}/>
+            <input className="textbox" type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
+            <input className="submit" type="submit" value={this.props.formType}/>
+          </form>
 
-        <section className="bottom">
-          <h3>New around here? {this.props.signUpLink}</h3>
-        </section>
+          <section className="bottom">
+            <h3>New around here? {this.props.signUpLink}</h3>
+          </section>
+        </div>
       </div>
     )
   }

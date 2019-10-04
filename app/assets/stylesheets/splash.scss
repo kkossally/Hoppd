@@ -24,7 +24,7 @@ body {
   color: black;
 }
 
-.masthead {
+.greeting-masthead, .session-masthead {
   position: relative;
   height: 700px;
   width: 100%;
@@ -33,7 +33,7 @@ body {
   align-items: center;
 }
 
-.masthead::before {
+.greeting-masthead::before, .session-masthead::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -43,6 +43,15 @@ body {
   background-position: center;
   filter: brightness(50%);
   -webkit-filter: brightness(50%);
+}
+
+.session-masthead {
+  min-height: 100%;
+}
+
+.session-masthead::before {
+  height: 100%;
+  position: fixed;
 }
 
 .masthead-inner {

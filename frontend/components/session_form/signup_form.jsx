@@ -32,7 +32,7 @@ class SignupForm extends React.Component {
     this.props.clearErrors();
   }
 
-  update(field) {
+  update(field){
     return event => this.setState({ [field]: event.target.value })
   }
 
@@ -42,81 +42,98 @@ class SignupForm extends React.Component {
     const {year, month, day} = this.state;
     const birthday = year + month + day;
     const user = Object.assign({}, this.state, { birthday });
-    this.props.submitForm(user);
-    // if (this.state.password !== this.state.passwordConfirmation) {
-    //   this.props.dispatchErrors(['Please confirm your password.']);
-    // }
+    if (this.state.password === this.state.password_confirmation) {
+      this.props.submitForm(user).then(() => this.props.history.push("/"));
+    } else {
+      this.props.dispatchErrors(['Please confirm your password.']);
+    }
   }
 
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, index) => {
-          return (
-            <li key={`error-${index}`}>
-              {error}
-            </li>
-          )
-        })}
-      </ul>
+    if (this.props.errors.length > 0) {
+      return (
+        <div className="errors">
+          <ul>
+          {this.props.errors.map((error, index) => {
+            return (
+              <li key={`error-${index}`}>
+                {error}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     )
+    } else {
+      return <p className="field-req" >All fields below are required.</p>
+    }
   }
 
   render() {
     const {username, email, password, password_confirmation, f_name, l_name } = this.state;
     return (
-      <div className="masthead-inner signup-box">
-        <Link className="logo-box" to='/'>
-          <h1>Hoppd</h1>
-          <h3>Be hoppy</h3>
-        </Link>
+      <div className="session-masthead">
 
-        {this.renderErrors()}
+        <div className="masthead-inner signup-box">
+          <Link className="logo-box" to='/'>
+            <h1>Hoppd</h1>
+            <h3>Be hoppy</h3>
+          </Link>
 
-        <p className="field-req" >All fields below are required.</p>
+          {this.renderErrors()}
 
-        <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
 
-          <div className="info-section">
-            <input className="textbox" type="text" value={username} placeholder='Username' onChange={this.update('username')} />   
-            <input className="textbox" type="text" value={email} placeholder='Email Address' onChange={this.update('email')} />
+            <div className="info-section">
+              <input className="textbox" type="text" value={username} placeholder='Username' onChange={this.update('username')} />   
+              <input className="textbox" type="text" value={email} placeholder='Email Address' onChange={this.update('email')} />
+              
+              <p className="pass-req">Avoid using common phrases and include a mix of letter and numbers.</p>
             
-            <p className="pass-req">Avoid using common phrases and include a mix of letter and numbers.</p>
-           
-            <input className="textbox" type="password" value={password} placeholder='Password' onChange={this.update('password')} />
-            <input className="textbox" type="password" value={password_confirmation} placeholder='Repeat Password' onChange={this.update('password_confirmation')} />
-          </div>
-          
-          
-          <div className="info-section">
-            <input className="textbox" type="text" value={f_name} placeholder='First Name' onChange={this.update('f_name')} />
-          <input className="textbox" type="text" value={l_name} placeholder='Last Name' onChange={this.update('l_name')} />
+              <input className="textbox" type="password" value={password} placeholder='Password' onChange={this.update('password')} />
+              <input className="textbox" type="password" value={password_confirmation} placeholder='Repeat Password' onChange={this.update('password_confirmation')} />
+            </div>
+            
+            
+            <div className="info-section">
+              <input className="textbox" type="text" value={f_name} placeholder='First Name' onChange={this.update('f_name')} />
+              <input className="textbox" type="text" value={l_name} placeholder='Last Name' onChange={this.update('l_name')} />
+            </div>
 
-          <label>
-            Birthday:
-              <select className="select-date" name="month" onChange={this.update('month')}>
-                <option value="selected">MM</option>
-                {this.dateNumeralList(1, 12)}
-              </select>
+            <div className="select-date">
+              <label>Birthday:</label>
 
-              <select className="select-date" name="day" onChange={this.update('day')}>
-                <option value="selected">DD</option>
-                {this.dateNumeralList(1, 31)}
-              </select>
+              <span className="select-span">
+                <select name="month" className="empty" onChange={this.update('month')}>
+                  <option value="selected">MM</option>
+                  {this.dateNumeralList(1, 12)}
+                </select>
+              </span>
 
-              <select className="select-date" name="day" onChange={this.update('year')}>
-                <option value="selected">YYYY</option>
-                {this.dateNumeralList(1900, 2010).reverse()}
-              </select>
-          </label>
-          </div>
+              <span className="select-span">
+                <select name="day" className="empty" onChange={this.update('day')}>
+                  <option value="selected">DD</option>
+                  {this.dateNumeralList(1, 31)}
+                </select>
+              </span>
 
-          <p className="terms">You must be of legal drinking age to join Hoppd.</p>
+              <span className="select-span">
+                <select name="day" className="empty" onChange={this.update('year')}>
+                  <option value="selected">YYYY</option>
+                  {this.dateNumeralList(1900, 2010).reverse()}
+                </select>
+              </span>
 
-          <input className="submit" type="submit" value={this.props.formType} />
-          
-        </form>
+            </div>
+
+            <p className="terms">You must be of legal drinking age to join Hoppd.</p>
+
+            <input className="submit" type="submit" value={this.props.formType} />
+            
+          </form>
+        </div>
+
       </div>
     )
   }

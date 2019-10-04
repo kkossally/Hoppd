@@ -15,13 +15,13 @@
 #
 
 class User < ApplicationRecord
-  attr_reader :password, :password_confirmation
+  attr_reader :password
   
   validates :username, :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, :f_name, :l_name, :birthday, presence: true
   validates :password, length: { minimum: 5 }, allow_nil: true
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  # validates :password, confirmation: true
+  # validates :password_confirmation, presence: true
   # validate :password_confirmation_match
 
 

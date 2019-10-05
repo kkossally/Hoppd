@@ -12,5 +12,5 @@ Beer.delete_all
 
 load 'db/seeds/users.rb'
 load 'db/seeds/breweries.rb'
-# load 'db/seeds/beers.rb'
+load 'db/seeds/beers.rb'
   

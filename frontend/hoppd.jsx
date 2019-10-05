@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
+import * as BeerApiUtil from './util/beers_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -25,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.logout = logout;
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
+  window.fetchBeers = BeerApiUtil.fetchBeers;
+  window.fetchBeer = BeerApiUtil.fetchBeer;
+  window.createBeer = BeerApiUtil.createBeer;
+  window.updateBeer = BeerApiUtil.updateBeer;
+  window.deleteBeer = BeerApiUtil.deleteBeer;
   //TESTING
   
   

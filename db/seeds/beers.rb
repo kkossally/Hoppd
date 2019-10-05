@@ -1,3 +1,3 @@
-Beer.create!(name: 'Goose IPA', style: 'IPA - English', abv: 5.9, ibu: 55, description: "Goose Island’s flagship IPA.", brewery_id: Brewery.find_by(name: 'Goose Island Beer Co.') )
-Beer.create!(name: 'Delirium Tremens', style: 'Belgian Strong Golden Ale', abv: 8.5, ibu: 26, description: "The allusion to pink elephants and the choice of names is not due to chance.", brewery_id: Brewery.find_by(name: 'Huyghe Brewery') )
-Beer.create!(name: '#9', style: 'Pale Ale - American', abv: 5.1, ibu: 20, description: "A beer cloaked in secrecy", brewery_id: Brewery.find_by(name: 'Magic Hat Brewing Company') )
+Beer.create!(name: 'Goose IPA', style: 'IPA - English', abv: 5.9, ibu: 55, description: "Goose Island’s flagship IPA.", brewery_id: Brewery.find_by(name: 'Goose Island Beer Co.').id )
+Beer.create!(name: 'Delirium Tremens', style: 'Belgian Strong Golden Ale', abv: 8.5, ibu: 26, description: "The allusion to pink elephants and the choice of names is not due to chance.", brewery_id: Brewery.find_by(name: 'Huyghe Brewery').id )
+Beer.create!(name: '#9', style: 'Pale Ale - American', abv: 5.1, ibu: 20, description: "A beer cloaked in secrecy", brewery_id: Brewery.find_by(name: 'Magic Hat Brewing Company').id )

@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render '/api/users/show'
+      render :show
     else
       errors = @user.errors.full_messages.map do |error|
         if error == "F name can't be blank"
@@ -34,7 +34,6 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :birthday)
-    # params.require(:user).permit(:username, :email, :password, :password_confirmation, :f_name, :l_name, :birthday)
   end
 
 end

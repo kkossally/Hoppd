@@ -36,7 +36,7 @@ class Api::BeersController < ApplicationController
     beer = Beer.find_by(id: params[:id])
     if beer
       beer.destroy
-      redirect_to '/api/beers'
+      redirect_to 'api/beers/'
     else
       render json: 'Beer not found', status: 404
     end
@@ -45,7 +45,7 @@ class Api::BeersController < ApplicationController
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :style, :abv, :ibu, :description)
+    params.require(:beer).permit(:name, :style, :abv, :ibu, :description, :brewery_id)
   end
 
 end

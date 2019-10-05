@@ -132,7 +132,7 @@ class SignupForm extends React.Component {
 
             <p className="terms">You must be of legal drinking age to join Hoppd.</p>
 
-            <input className="submit" type="submit" value={this.props.formType} />
+            <input className="button submit" type="submit" value={this.props.formType} />
             
           </form>
         </div>

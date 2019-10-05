@@ -10,8 +10,11 @@
   background: white;
 }
 
+// .signin-logo-box {
 .logo-box {
   text-align: center;
+  // font-size: 60px;
+  // font-weight: 700;
 }
 
 
@@ -27,11 +30,12 @@
   width: 360px;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   color: #cccccc;
 }
 
-.login-box form > {
+.login-box form > * , .demo-login {
   width: 300px;
 }
 
@@ -44,19 +48,32 @@
   color: black;
 }
 
-.login-box .submit, .logout-button {
+.button {
   padding: 12px;
   border-radius: 5px;
-  background-color: #ffcc00;
   font-size: 18px;
+  font-weight: 700;
   text-align: center;
   color: white;
-  z-index: 2;
 }
 
-.login-box .submit:hover, .logout {
+.submit, .logout {
+  background-color: #ffcc00;
+}
+
+.submit:hover, .logout:hover {
   background-color: #f4b800;
   cursor: pointer
+}
+
+.demo-login {
+  margin: 16px 0 32px 0;
+  background-color: #354d89;
+}
+
+.demo-login:hover {
+  background: #2b3e6e;
+  cursor: pointer;
 }
 
 .login-box .bottom a {

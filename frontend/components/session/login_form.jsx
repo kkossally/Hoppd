@@ -6,6 +6,7 @@ class LoginForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillUnmount() {
@@ -21,6 +22,10 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state)
     this.props.clearErrors();
     this.props.submitForm(user);
+  }
+
+  demoLogin() {
+    this.props.submitForm({ username: "jbarnes", password: "hiphop" });
   }
 
   renderErrors() {
@@ -49,6 +54,8 @@ class LoginForm extends React.Component {
             <h1>Hoppd</h1>
             <h3>Be hoppy</h3>
           </Link>
+          
+          <button className="button demo-login" onClick={this.demoLogin}>Demo Login</button>
 
           <form onSubmit={this.handleSubmit}>
             
@@ -56,7 +63,7 @@ class LoginForm extends React.Component {
 
             <input className="textbox" type="text" value={this.state.username} placeholder='Username' onChange={this.update('username')}/>
             <input className="textbox" type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
-            <input className="submit" type="submit" value={this.props.formType}/>
+            <input className="button submit" type="submit" value={this.props.formType}/>
           </form>
 
           <section className="bottom">

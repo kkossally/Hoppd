@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
-import * as BeerApiUtil from './util/beers_api_util';
+import * as BeerActions from './actions/beer_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -24,13 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.signup = signup;
   // window.login = login;
   // window.logout = logout;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  window.fetchBeers = BeerApiUtil.fetchBeers;
-  window.fetchBeer = BeerApiUtil.fetchBeer;
-  window.createBeer = BeerApiUtil.createBeer;
-  window.updateBeer = BeerApiUtil.updateBeer;
-  window.deleteBeer = BeerApiUtil.deleteBeer;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchBeers = BeerActions.fetchBeers;
+  window.fetchBeer = BeerActions.fetchBeer;
+  window.createBeer = BeerActions.createBeer;
+  window.updateBeer = BeerActions.updateBeer;
+  window.deleteBeer = BeerActions.deleteBeer;
+  window.clearBeerErrors = BeerActions.clearBeerErrors;
   //TESTING
   
   

@@ -11,6 +11,6 @@ export default () => (
     <AuthRoute exact path="/" component={Splash} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path="/" component={MainContainer} />
+    <ProtectedRoute path="/" component={MainContainer} /> {/*make regular route when the logout button is moved from the main component header*/}
   </div>
 );

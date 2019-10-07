@@ -3,5 +3,33 @@
   width: 100%;
   height: calc(100% - 50px);
   position: absolute;
-  background: #f5f2e8
+  background: #f5f2e8;
+
+  display: flex;
+  justify-content: center;
+
+  z-index: -1;
+}
+
+.main {
+  border: 4px solid black;
+  
+  margin-top: 30px;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1050px;
+  
+  display: flex;
+  // justify-content: space-between;
+}
+
+.content {
+  border: 4px solid indianred;
+  width: 100%;
+  max-width: 690px;
+}
+
+.sidebar {
+  border: 4px solid cadetblue;
+  width: 324px;
 }

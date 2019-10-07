@@ -38,23 +38,51 @@ header.home {
   color: white;
 }
 
-.navbar ul {
+.navbar > ul {
   display: flex;
   justify-content: space-between;
   width: 35%;
   position: relative;
   left: -30px;
-  // margin-right: 170px;
 }
 
 .profile-dropdown {
-  line-height: 75px;
+  position: relative;
+  right: -70px;
+  // border: 1px solid white;
 }
 
 .profile-dropdown img {
-  height: 35px;
-  position: relative;
-  left: 70px;
+  width: 35px;
+  display: block;
+  margin: 7.5px auto;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: -10px;
+  z-index: 1;
+  background: #2c2c2c;
+  font-size: 17px;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu > li {
+  border-bottom: 1px solid #444;
+  width: 200px;
+}
+
+.dropdown-menu a {
+  padding: 12px;
+  width: 200px;
+}
+
+.dropdown-menu a:hover {
+  cursor: pointer;
 }
 
 .home .search-container {

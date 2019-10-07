@@ -11,10 +11,19 @@ const MainComponent = (props) => {
       <div>
         <Header logout={props.logout}></Header>
         <div className="page">
-          <Switch>
-            <Route path="/beers/:beerId" component={BeerShow} />
-            <Route path="/beers" component={BeerIndexContainer} />
-          </Switch>
+          <div className="main">
+            <div className="content">
+              <Switch>
+                <Route path="/beers/:beerId" component={BeerShow} />
+                <Route path="/beers" component={BeerIndexContainer} />
+              </Switch>
+            </div>
+
+            <div className="sidebar">
+
+            </div>
+
+          </div>
         </div>
         {/* Sidebar */}
         {/* <Footer></Footer> */}

@@ -26,13 +26,25 @@ const Header = (props) => {
 
         <ul>
           <a href="#">The Pub</a>
-          <a href="#">Top Rated</a>
+          <Link to="/beers">Top Rated</Link>
           <a href="#">Supporter</a>
           <a href="#">Help</a>
         </ul>
 
         <div className="profile-dropdown">
           <img src={window.userIconURL} alt="User icon"/>
+            <ul className="dropdown-menu">
+              <li><a>Recent Activity</a></li>
+              <li><a>My Profile</a></li>
+              <li><a>Personal Stats</a></li>
+              <li><a>Beer History</a></li>
+              <li><a>Friends</a></li>
+              <li><a>Lists</a></li>
+              <li><a>Badges</a></li>
+              <li><a>Venues</a></li>
+              <li><a>Account Settings</a></li>
+              <li><a onClick={props.logout}>Logout</a></li>
+            </ul>
         </div>
 
         <div className="search-container">
@@ -42,7 +54,6 @@ const Header = (props) => {
       </nav>
 
       
-    <button className="button logout-button" onClick={props.logout}>Logout</button>
     </header>
   )
 }

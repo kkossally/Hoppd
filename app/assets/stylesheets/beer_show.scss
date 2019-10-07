@@ -33,19 +33,19 @@
   height: 95px;
 }
 
-.basic-info .name h1 {
+.info h1 {
   margin-bottom: 6px;
   font-size: 32px;
   color: #000;
 }
 
-.basic-info .name h2 {
+.info h2 {
   margin-bottom: 6px;
   font-size: 20px;
   color: #c60;
 }
 
-.basic-info .name h3 {
+.info h3 {
   font-size: 16px;
   color: #888;
 }
@@ -126,5 +126,19 @@
   width: 50px;
   height: 50px;
 
+  text-align: center;
+
   background: #ffcc00;
+}
+
+.actions div:first-child > img {
+  margin: 25% auto;
+
+  height: 24px;
+}
+
+.actions div:last-child > img {
+  margin: 20% auto;
+
+  height: 28px;
 }

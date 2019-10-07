@@ -76,8 +76,8 @@ class BeerShow extends React.Component {
         <div className="bottom">
           <div>{description}</div>
           <div className="actions">
-            <div>Action 1</div>
-            <div>Action 2</div>
+            <div><img src={window.checkIconURL} alt="Check Icon"/></div>
+            <div><img src={window.plusIconURL} alt="Plus Icon"/></div>
           </div>
         </div>
       </div>

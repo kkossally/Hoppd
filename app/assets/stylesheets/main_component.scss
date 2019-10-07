@@ -11,25 +11,24 @@
   z-index: -1;
 }
 
-.main {
-  border: 4px solid black;
+.content {
+  // border: 4px solid black;
   
   margin-top: 30px;
-  padding: 0 15px;
+  padding: 0 10px;
   width: 100%;
   max-width: 1050px;
   
   display: flex;
-  // justify-content: space-between;
+  justify-content: space-between;
 }
 
-.content {
-  border: 4px solid indianred;
-  width: 100%;
-  max-width: 690px;
+.main-content {
+  // border: 4px solid indianred;
+  width: 65%;
 }
 
 .sidebar {
   border: 4px solid cadetblue;
-  width: 324px;
+  width: 300px;
 }

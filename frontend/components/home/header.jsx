@@ -26,7 +26,7 @@ const Header = (props) => {
 
         <ul>
           <a href="#">The Pub</a>
-          <Link to="/beers">Top Rated</Link>
+          <Link to="/beers" style={{textTransform: 'uppercase', fontWeight: 'bolder'}}>Beers</Link>
           <a href="#">Supporter</a>
           <a href="#">Help</a>
         </ul>

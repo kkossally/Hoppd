@@ -16,16 +16,17 @@ const MainComponent = (props) => {
           <Switch>
             <Route exact path="/beers/new" component={CreateBeerFormContainer} />
               
-            <div className="main">
-              <div>
-                <div className="content">
-                  <Route path="/beers/:beerId" component={BeerShow} />
-                  <Route path="/beers" component={BeerIndexContainer} />
-                </div>
-                <div className="sidebar">
-                </div>
+            <div className="content">
+              
+              <div className="main-content">
+                <Route exact path="/beers" component={BeerIndexContainer} />
+                <Route exact path="/beers/:beerId" component={BeerShow} />
               </div>
+
+              <div className="sidebar"></div>
+              
             </div>
+
           </Switch>
 
         </div>

@@ -15,7 +15,7 @@ const mdp = dispatch => {
   }
 }
 
-const Header = (props) => {
+const Header = ({ logout }) => {
   return (
     <header className="home">
 
@@ -43,7 +43,7 @@ const Header = (props) => {
               <li><a>Badges</a></li>
               <li><a>Venues</a></li>
               <li><a>Account Settings</a></li>
-              <li><a onClick={props.logout}>Logout</a></li>
+              <li><a onClick={logout}>Logout</a></li>
             </ul>
         </div>
 

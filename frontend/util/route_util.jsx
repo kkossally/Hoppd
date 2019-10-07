@@ -5,7 +5,7 @@ import { Route, withRouter, Redirect } from 'react-router-dom';
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
   return (
     <Route path={path} exact={exact} render={ props => { 
-      return !loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      return !loggedIn ? <Component {...props} /> : <Redirect to="/beers" />
     }}/>
   );
 }
@@ -13,7 +13,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
   return (
     <Route path={path} exact={exact} render={ props => { 
-      return loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      return loggedIn ? <Component {...props} /> : <Redirect to="/login" />
     }}/>
   );
 }

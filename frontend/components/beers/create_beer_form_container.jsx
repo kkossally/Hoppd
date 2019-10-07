@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createBeer,receiveBeerErrors, clearBeerErrors } from '../../actions/beer_actions';
+import { createBeer, receiveBeerErrors, clearBeerErrors } from '../../actions/beer_actions';
 import BeerForm from './beer_form';
 
 const msp = ({ errors: { beers } }) => {

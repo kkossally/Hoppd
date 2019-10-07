@@ -14,7 +14,7 @@
 #
 
 class Beer < ApplicationRecord
-  validates :name, :style, :abv, :ibu, :description, :brewery_id, presence: true
+  validates :name, :style, :abv, :description, :brewery_id, presence: true
   validates :name, uniqueness: { scope: :brewery_id, message: "breweries cannot have duplicate beer names"}
 
   belongs_to :brewery

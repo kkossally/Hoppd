@@ -1,36 +1,27 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util'; 
 import Header from './header';
-import BeerIndexContainer from '../beers/beer_index_container';
-import BeerShow from '../beers/beer_show';
 import CreateBeerFormContainer from '../beers/create_beer_form_container';
+import EditBeerFormContainer from '../beers/edit_beer_form_container';
+import Content from './content';
 
-
-const MainComponent = (props) => {
+const MainComponent = () => {
 
     return (
+      /* Eventually, this page is going to have to be switch between auth and 
+      protected versions of the header. Visitors will be able to visit the beer
+      search results, show page and top rated components without logging in */
       <div>
-        <Header logout={props.logout}></Header>
+        <Header />
         <div className="page">
-
           <Switch>
-            <Route exact path="/beers/new" component={CreateBeerFormContainer} />
-              
-            <div className="content">
-              
-              <div className="main-content">
-                <Route exact path="/beers" component={BeerIndexContainer} />
-                <Route exact path="/beers/:beerId" component={BeerShow} />
-              </div>
-
-              <div className="sidebar"></div>
-              
-            </div>
-
+            <ProtectedRoute exact path="/beers/new" component={CreateBeerFormContainer} />
+            <ProtectedRoute exact path="/beers/:beerId/edit" component={EditBeerFormContainer} />
+            <Route path="/beers" component={Content} />
           </Switch>
 
         </div>
-        {/* Sidebar */}
         {/* <Footer></Footer> */}
       </div>
     )

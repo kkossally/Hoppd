@@ -7,10 +7,14 @@ import LoginFormContainer from './session/login_form_container';
 import MainContainer from './home/main_container';
 
 export default () => (
-  <div>
+  <Switch>
     <AuthRoute exact path="/" component={Splash} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path="/" component={MainContainer} /> {/*make regular route when the logout button is moved from the main component header*/}
-  </div>
+    <ProtectedRoute path="/beers" component={MainContainer} /> {/*this should not be 
+    a protected route, but it should also not display along with the splash, 
+    which it will if the hash routes are the same. Later on, this should route 
+    to the search results page, from which visitors can access a beer show page, 
+    but not an edit or check-in page*/}
+  </Switch>
 );

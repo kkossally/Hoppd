@@ -16,7 +16,7 @@ const mdp = dispatch => {
     fetchBeers: () => dispatch(fetchBeers()),
     createBeer: (
       <button onClick={() => dispatch(openModal('createBeer'))}>
-        Create Beer
+        Add it here!
       </button>
     ),
   }
@@ -40,7 +40,10 @@ class BeerIndex extends React.Component {
     return (
       <div className="beer-list">
         {beers}
-        {this.props.createBeer}
+        <div className="add-beer">
+          <p>Don't see the beer you're looking for?</p>
+          {this.props.createBeer}
+        </div>
       </div>
     )
   }

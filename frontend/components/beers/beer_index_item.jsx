@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { fetchBeer } from '../../actions/beer_actions';
 
 const BeerIndexItem = ({ beer }) => {
-  const { name, brewery_id, style, abv, ibu } = beer;
+  const { name, brewery_id, style, abv, ibu, logoURL } = beer;
   return(
-    // <Link key={beer.id} to={{
-    //   pathname: `/beers/${beer.id}`,
-    //   state: beer,
-    // }}>{beer.name}</Link>
     <div className="beer-info-box">
       <div className="basic-info">
-        <Link to={`/beers/${beer.id}`}><img className="logo" src="#" alt="Beer Logo" /></Link>
+        <Link to={`/beers/${beer.id}`}><img className="logo" src={logoURL}alt="Beer Logo" /></Link>
         <div className="name">
           <Link to={`/beers/${beer.id}`}><h1>{name}</h1></Link>
           <h2>Brewery: {brewery_id}</h2>

@@ -15,7 +15,7 @@ const mdp = dispatch => {
     fetchBeer: id => dispatch(fetchBeer(id)),
     editBeer: (
       <button onClick={() => dispatch(openModal('editBeer'))}>
-        Edit
+        <img src={window.pencilIconURL} alt="Edit Icon" />
       </button>
     ),
     // openForm: (
@@ -43,13 +43,13 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    const { name, style, abv, ibu, description, brewery_id } = this.props.beer;
+    const { name, style, abv, ibu, description, brewery_id, logoURL } = this.props.beer;
     return (
       <div className="beer-info-box">
         <div className="top">
           <div className="info">
             <div className="basic-info">
-              <img className="logo" src="#" alt="Beer Logo"/>
+              <img className="logo" src={logoURL} alt="Beer Logo"/>
               <div className="name">
                 <h1>{name}</h1>
                 <h2>Brewery: {brewery_id}</h2>

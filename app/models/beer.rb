@@ -18,4 +18,6 @@ class Beer < ApplicationRecord
   validates :name, uniqueness: { scope: :brewery_id, message: "breweries cannot have duplicate beer names"}
 
   belongs_to :brewery
+
+  has_one_attached :logo
 end

@@ -2,8 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util'; 
 import Header from './header';
-import CreateBeerFormContainer from '../beers/create_beer_form_container';
-import EditBeerFormContainer from '../beers/edit_beer_form_container';
 import Content from './content';
 
 const MainComponent = () => {
@@ -16,9 +14,8 @@ const MainComponent = () => {
         <Header />
         <div className="page">
           <Switch>
-            <ProtectedRoute exact path="/beers/new" component={CreateBeerFormContainer} />
-            {/* <ProtectedRoute exact path="/beers/:beerId/edit" component={EditBeerFormContainer} /> */}
-            <Route path="/beers" component={Content} />
+            <Route path="/beers" component={Content} /> {/*This will become the search results page*/}
+            {/* This will contain more routes to other pages besides beer show */}
           </Switch>
 
         </div>

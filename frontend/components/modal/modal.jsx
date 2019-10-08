@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import EditBeerFormContainer from '../beers/edit_beer_form_container';
 import CreateBeerFormContainer from '../beers/create_beer_form_container';
 
@@ -12,11 +12,11 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
     case 'editBeer':
-      component = <EditBeerFormContainer />;
+      component = <Route to="/beers/:beerId" component={EditBeerFormContainer} />;
       break;
 
     case 'createBeer':
-      component = <CreateBeerFormContainer />;
+      component = <Route to="/beers" component={CreateBeerFormContainer} />;
       break;
 
     default:
@@ -43,4 +43,4 @@ const mdp = dispatch => {
   }
 }
 
-export default withRouter(connect(msp, mdp)(Modal));
+export default connect(msp, mdp)(Modal);

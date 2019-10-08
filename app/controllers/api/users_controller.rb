@@ -7,7 +7,18 @@ class Api::UsersController < ApplicationController
       login(@user)
       render :show
     else
-      errors = @user.errors.full_messages.map do |error|
+      render json: errorMapper(@user.errors.full_messages), status: 422
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :birthday)
+  end
+
+   def errorMapper(errors)
+    errors = @user.errors.full_messages.map do |error|
         if error == "F name can't be blank"
           error = "Please enter your first name."
         elsif error == "L name can't be blank"
@@ -23,17 +34,8 @@ class Api::UsersController < ApplicationController
         elsif error == "Birthday can't be blank"
           error = "Please enter your full birthday."
         else
-          error = error
         end
       end
-      render json: errors, status: 422
-    end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :f_name, :l_name, :birthday)
   end
 
 end

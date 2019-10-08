@@ -6,7 +6,7 @@ class Api::BeersController < ApplicationController
     if @beer.save
       render :show
     else
-      render json: @beer.errors.full_messages, status: 422
+      render json: errorMapper(@beer.errors.full_messages), status: 422
     end
   end
 
@@ -28,7 +28,7 @@ class Api::BeersController < ApplicationController
     if @beer.update(beer_params)
       render :show
     else
-      render json: @beer.errors.full_messages, status: 422
+      render json: errorMapper(@beer.errors.full_messages), status: 422
     end
   end
 
@@ -46,6 +46,23 @@ class Api::BeersController < ApplicationController
 
   def beer_params
     params.require(:beer).permit(:name, :style, :abv, :ibu, :description, :brewery_id)
+  end
+
+  def errorMapper(errors)
+    errors.map do |error|
+      if error == "Name can't be blank"
+        error = "Please enter a name."
+      elsif error == "Style can't be blank"
+        error = "Please choose a style."
+      elsif error == "Abv can't be blank"
+        error = "Please enter an ABV."
+      elsif error == "Description can't be blank"
+        error = "Please enter a description."
+      elsif error == "Brewery can't be blank"
+        error = "Please enter an exitsting brewery."
+      else
+      end
+    end
   end
 
 end

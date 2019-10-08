@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import beerStyles from './beer_styles';
 
 class BeerForm extends React.Component {
@@ -11,16 +10,12 @@ class BeerForm extends React.Component {
 
   componentDidMount() {
     if (this.props.formType === 'Edit Beer') {
-      // debugger
       this.setState(this.props.beer);
     }
   }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.beer.id != this.props.beer.id) {
-      // debugger
-      this.setState(this.props.beer);
-    }
+  
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -29,20 +24,42 @@ class BeerForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.submitForm(this.state).then(action => this.props.history.push(`/beers/${action.beer.id}`));
+    this.props.clearErrors();
+    this.props.submitForm(this.state).then(action => this.props.history.push(`/beers/${action.beer.id}`)).then(() =>  this.props.closeModal());
   }
 
   beerStyleOptions() {
     return beerStyles.map((style, index) => {
-      return <option key={index} value={style}>{style}</option>
+      const selected = style === this.props.beer.style ? "selected" : "";
+      return <option key={index} defaultValue={selected} value={style}>{style}</option>
     })
+  }
+
+  renderErrors() {
+    if (this.props.errors.length > 0) {
+      return (
+        <div className="errors">
+          <ul>
+            {this.props.errors.map((error, index) => {
+              return (
+                <li key={`error-${index}`}>
+                  {error}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
   }
 
   render() {
     return (
-      // <div>
       <form className="beer-form" onSubmit={this.handleSubmit}>
         <div onClick={this.props.closeModal} className="close-x">X</div>
+
+        {this.renderErrors()}
+
         <div className="name">
           <label>Beer Name</label>
             <input className="textbox" type="text" value={this.state.name} onChange={this.update('name')}/>          
@@ -82,6 +99,6 @@ class BeerForm extends React.Component {
 
 export default BeerForm;
 
-
+// <div>
 {/* <button onClick={() => this.props.deleteBeer(this.props.beer.id)}>Delete Beer</button> */}
 {/* </div> */}

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { createBeer, receiveBeerErrors, clearBeerErrors } from '../../actions/beer_actions';
+import { createBeer, clearBeerErrors } from '../../actions/beer_actions';
 import { closeModal } from '../../actions/modal_actions';
 import BeerForm from './beer_form';
 
 const msp = ({ errors: { beers } }) => {
   return {
-    // errors: beers,
+    errors: beers,
     formType: 'Add New Beer',
     beer: { name: "", style: "", abv: "", ibu: "", description: "", brewery_id: "" }
   }
@@ -15,8 +15,7 @@ const mdp = dispatch => {
   return {
     submitForm: beer => dispatch(createBeer(beer)),
     closeModal: () => dispatch(closeModal()),
-    // dispatchErrors: errors => dispatch(receiveBeerErrors(errors)),
-    // clearErrors: () => dispatch(clearBeerErrors()),
+    clearErrors: () => dispatch(clearBeerErrors()),
   }
 }
 

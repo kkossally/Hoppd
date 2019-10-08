@@ -11,12 +11,14 @@ class BeerForm extends React.Component {
 
   componentDidMount() {
     if (this.props.formType === 'Edit Beer') {
-      this.state = this.props.beer;
+      // debugger
+      this.setState(this.props.beer);
     }
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.beer.id != this.props.beer.id) {
+      // debugger
       this.setState(this.props.beer);
     }
   }
@@ -38,8 +40,9 @@ class BeerForm extends React.Component {
 
   render() {
     return (
+      // <div>
       <form className="beer-form" onSubmit={this.handleSubmit}>
-
+        <div onClick={this.props.closeModal} className="close-x">X</div>
         <div className="name">
           <label>Beer Name</label>
             <input className="textbox" type="text" value={this.state.name} onChange={this.update('name')}/>          
@@ -69,7 +72,7 @@ class BeerForm extends React.Component {
         </div>
         
         <label>Description</label>
-        <textarea className="textbox" onChange={this.update('description')}></textarea>
+        <textarea className="textbox" value={this.state.description} onChange={this.update('description')}></textarea>
 
         <input className= "submit" type="submit" value={this.props.formType}/>
       </form>
@@ -77,4 +80,8 @@ class BeerForm extends React.Component {
   }
 }
 
-export default withRouter(BeerForm);
+export default BeerForm;
+
+
+{/* <button onClick={() => this.props.deleteBeer(this.props.beer.id)}>Delete Beer</button> */}
+{/* </div> */}

@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import usersReducer from "./users_reducer";
-import beersReducer from "./beers_reducer";
+import users from "./users_reducer";
+import beers from "./beers_reducer";
 
 const entitiesReducer = combineReducers({
-  users: usersReducer,
-  beers: beersReducer,
+  users,
+  beers,
 });
 
 export default entitiesReducer;

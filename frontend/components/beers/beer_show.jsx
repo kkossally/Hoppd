@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBeer } from '../../actions/beer_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   const beer = state.entities.beers[ownProps.match.params.beerId] || {};
@@ -12,6 +13,16 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     fetchBeer: id => dispatch(fetchBeer(id)),
+    editBeer: (
+      <button onClick={() => dispatch(openModal('editBeer'))}>
+        Edit
+      </button>
+    ),
+    // openForm: (
+    //   <button onClick={formType => dispatch(openModal('formType'))}>
+    //     {formType}
+    //   </button>
+    // ),
   }
 }
 
@@ -78,6 +89,7 @@ class BeerShow extends React.Component {
           <div className="actions">
             <div><img src={window.checkIconURL} alt="Check Icon"/></div>
             <div><img src={window.plusIconURL} alt="Plus Icon"/></div>
+            {this.props.editBeer}
           </div>
         </div>
       </div>

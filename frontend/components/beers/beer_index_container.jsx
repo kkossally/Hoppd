@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { fetchBeers } from '../../actions/beer_actions';
+import { openModal } from '../../actions/modal_actions';
 import BeerIndexItem from './beer_index_item';
 
 const msp = state => {
@@ -13,6 +14,11 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     fetchBeers: () => dispatch(fetchBeers()),
+    createBeer: (
+      <button onClick={() => dispatch(openModal('createBeer'))}>
+        Create Beer
+      </button>
+    ),
   }
 }
 
@@ -34,6 +40,7 @@ class BeerIndex extends React.Component {
     return (
       <div className="beer-list">
         {beers}
+        {this.props.createBeer}
       </div>
     )
   }

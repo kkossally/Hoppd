@@ -17,7 +17,7 @@ const MainComponent = () => {
         <div className="page">
           <Switch>
             <ProtectedRoute exact path="/beers/new" component={CreateBeerFormContainer} />
-            <ProtectedRoute exact path="/beers/:beerId/edit" component={EditBeerFormContainer} />
+            {/* <ProtectedRoute exact path="/beers/:beerId/edit" component={EditBeerFormContainer} /> */}
             <Route path="/beers" component={Content} />
           </Switch>
 

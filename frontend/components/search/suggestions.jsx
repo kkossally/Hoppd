@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import { fetchBeers } from '../../actions/beer_actions';
 
@@ -26,7 +27,8 @@ class Suggestions extends React.Component {
     })
     return (
       <div className="search-container">
-        <input type="text" className="textbox" placeholder="Search for beers" onChange={this.handleChange}/>
+        <input type="text" className="textbox" placeholder="Search for beers" onChange={this.handleChange} />
+        {/* <img src={window.searchIconURL} alt="Search Icon"/> */}
         <ul className="search-results">
           {beerSuggestions}
         </ul>

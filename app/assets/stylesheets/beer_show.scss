@@ -166,7 +166,7 @@
 }
 
 .bookmark-icon:before {
-  content: "Bookmark";
+  content: "Save";
 }
 
 .edit-icon:before {
@@ -181,12 +181,16 @@
   position: absolute;
   left: 150%;
   height: 100%; width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 50px;
   transition: all .3s;
 }
 
 .actions div:hover:before {
   left: 0;
-  font-size: 16px;
+  font-size: 24px;
+  line-height: 50px;
 }
 
 .actions div:hover img {

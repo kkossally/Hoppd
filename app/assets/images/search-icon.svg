@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <ellipse id="a" cx="13" cy="13" rx="13" ry="13"/>
+    <mask id="b" width="26" height="26" x="0" y="0" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="60" height="60" transform="matrix(-1 0 0 1 60 0)"/>
+    <g transform="scale(-1 1) rotate(30 -25.294 -54.74)">
+      <use stroke="#595959" stroke-width="4" mask="url(#b)" xlink:href="#a"/>
+      <path fill="#595959" d="M10.6363636,25.2 L15.3636364,25.2 L15.3636364,39.6286022 C15.3636364,40.938289 14.3145013,42 13,42 L13,42 C11.6945997,42 10.6363636,40.9490848 10.6363636,39.6286022 L10.6363636,25.2 Z"/>
+    </g>
+  </g>
+</svg>

@@ -21,6 +21,7 @@ const mdp = dispatch => {
 class BeerShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,11 @@ class BeerShow extends React.Component {
     if (currentBeerId !== prevProps.match.params.beerId) {
       this.props.fetchBeer(currentBeerId);
     }
+  }
+
+  handleDelete() {
+    // debugger
+   this.props.deleteBeer(this.props.beer.id).then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -85,10 +91,10 @@ class BeerShow extends React.Component {
             <div className="bookmark-icon">
               <img src={window.plusIconURL} alt="Plus Icon"/>
             </div>
-            <div className="edit-icon" onclick={() => this.props.editBeer()}>
+            <div className="edit-icon" onClick={() => this.props.editBeer()}>
               <img src={window.pencilIconURL} alt="Edit Icon" />
             </div>
-            <div className="delete-icon" onClick={() => this.props.deleteBeer(id)}>
+            <div className="delete-icon" onClick={this.handleDelete}>
               <img src={window.deleteIconURL} alt="Delete Icon" />
             </div>
           </div>

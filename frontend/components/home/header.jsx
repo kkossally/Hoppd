@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import SearchContainer from '../search/search_container';
 
 const msp = ({ entities: { users }, session }) => {
   return {
@@ -47,9 +48,9 @@ const Header = ({ logout }) => {
             </ul>
         </div>
 
-        <div className="search-container">
-          Search Container
-        </div>
+        {/* <div className="search-container"> */}
+          <SearchContainer />
+        {/* </div> */}
         
       </nav>
 

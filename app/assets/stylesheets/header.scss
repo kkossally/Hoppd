@@ -86,11 +86,20 @@ header.home {
   cursor: pointer;
 }
 
-.home .search-container {
+.search-container {
+  // background: white;
+  color: black;
+}
+
+.home .search-container input {
   // margin-right: 10px;
   height: 35px;
   width: 240px;
   align-self: center;
   border-radius: 5px;
+  background: white;
+}
+
+.search-results {
   background: white;
 }

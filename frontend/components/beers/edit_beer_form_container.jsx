@@ -21,6 +21,7 @@ const mdp = dispatch => {
   return {
     submitForm: beer => dispatch(updateBeer(beer)),
     fetchBeer: id => dispatch(fetchBeer(id)),
+    // deleteBeer: id => dispatch(deleteBeer(id)),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearBeerErrors()),
   }

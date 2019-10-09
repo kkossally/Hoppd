@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBeer } from '../../actions/beer_actions';
+import { fetchBeer, deleteBeer } from '../../actions/beer_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -13,16 +13,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     fetchBeer: id => dispatch(fetchBeer(id)),
-    editBeer: (
-      <button onClick={() => dispatch(openModal('editBeer'))}>
-        <img src={window.pencilIconURL} alt="Edit Icon" />
-      </button>
-    ),
-    // openForm: (
-    //   <button onClick={formType => dispatch(openModal('formType'))}>
-    //     {formType}
-    //   </button>
-    // ),
+    deleteBeer: id => dispatch(deleteBeer(id)),
+    editBeer: () => dispatch(openModal('editBeer')),
   }
 }
 
@@ -43,7 +35,7 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    const { name, style, abv, ibu, description, brewery_id, logoURL } = this.props.beer;
+    const { id, name, style, abv, ibu, description, brewery_id, logoURL } = this.props.beer;
     return (
       <div className="beer-info-box">
         <div className="top">
@@ -87,9 +79,18 @@ class BeerShow extends React.Component {
         <div className="bottom">
           <div>{description}</div>
           <div className="actions">
-            <div><img src={window.checkIconURL} alt="Check Icon"/></div>
-            <div><img src={window.plusIconURL} alt="Plus Icon"/></div>
-            {this.props.editBeer}
+            <div className="check-icon"> 
+              <img src={window.checkIconURL} alt="Check Icon"/>
+            </div>
+            <div className="bookmark-icon">
+              <img src={window.plusIconURL} alt="Plus Icon"/>
+            </div>
+            <div className="edit-icon" onclick={() => this.props.editBeer()}>
+              <img src={window.pencilIconURL} alt="Edit Icon" />
+            </div>
+            <div className="delete-icon" onClick={() => this.props.deleteBeer(id)}>
+              <img src={window.deleteIconURL} alt="Delete Icon" />
+            </div>
           </div>
         </div>
       </div>

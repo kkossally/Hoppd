@@ -27,6 +27,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :checkins,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Checkin
+
+  has_many :beers,
+    through: :checkins,
+    source: :beer
+
   # def password_confirmation_match
   #   if password.present? && password != password_confirmation
   #     errors.add(:passwords, "must match.")

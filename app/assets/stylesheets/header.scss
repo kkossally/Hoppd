@@ -87,21 +87,54 @@ header.home {
 }
 
 .search-container {
-  // background: white;
+  height: 35px;
+  width: 240px;
+
+  display: flex;
+  align-self: center;
+  position: relative;
+  
+  border-radius: 5px;
+  
+  background: white;
   color: black;
 }
 
 .home .search-container input {
-  // margin-right: 10px;
-  height: 35px;
-  width: 240px;
-  align-self: center;
-  border-radius: 5px;
-  background: white;
-  background-image: image_url('mag-glass.png');
+  height: 100%;
+  width: 100%;
 
+  border: none;
+  outline-offset: unset;
+  outline: none;
+}
+
+.search-container > img {
+  height: 45%;
+  margin: auto 5px;
+  -webkit-filter: invert(80%);
 }
 
 .search-results {
+  width: 100%;
+
+  position: absolute;
+  top: 32px;
+  
   background: white;
 }
+
+// .search-results a {
+//   height: 32px;
+// }
+
+// .search-results .beer-info-box {
+//   display: flex;
+//   height: 48px;
+//   padding: 8px;
+// }
+
+// .search-results img {
+//   height: 32px;
+//   margin: 0 auto;
+// }

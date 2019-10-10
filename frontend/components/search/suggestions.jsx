@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { debounce } from 'lodash';
 // import { connect } from 'react-redux';
 // import { fetchBeers } from '../../actions/beer_actions';
 
@@ -9,7 +10,7 @@ class Suggestions extends React.Component {
     this.filteredBeers = [];
     this.handleChange = this.handleChange.bind(this);
   }
-
+  
   handleChange(event) {
     if (event.target.value !== "") {
       this.filteredBeers = this.props.beers.filter(beer => {
@@ -18,21 +19,44 @@ class Suggestions extends React.Component {
     } else {
       this.filteredBeers = [];
     }
-    this.setState({ filtered: this.filteredBeers })
+    this.setState({ filtered: this.filteredBeers });
   }
+
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   this.props.submitForm(this.state).then(action => this.props.history.push(`/beers/${action.beer.id}`)).then(() => this.props.closeModal());
+  // }
+  
 
   render() {
     const beerSuggestions = this.filteredBeers.map(beer => {
-      return <li key={beer.id} >{beer.name}</li>
-    })
+      return (
+        // <div key={beer.id} className="beer-info-box">
+        //   < Link to={`/beers/${beer.id}`}><img src={beer.logoURL} alt="Beer Logo" /></Link>
+        //   <div className="name">
+        //     <Link to={`/beers/${beer.id}`}>
+        //       <h1>{beer.name}</h1>
+        //       <h2>Brewery: {beer.brewery_id}</h2>  
+        //     </Link>    
+        //   </div>
+        // </div>
+        <li key={beer.id} >
+          <Link to={`/beers/${beer.id}`}>{beer.name}</Link>
+        </li>
+      )
+    });
+
     return (
-      <div className="search-container">
+      <form className="search-container">
         <input type="text" className="textbox" placeholder="Search for beers" onChange={this.handleChange} />
-        {/* <img src={window.searchIconURL} alt="Search Icon"/> */}
+        <img src={window.searchIconURL} alt="Search Icon"/>
+        {/* <div className="search-results">
+          {beerSuggestions}
+        </div> */}
         <ul className="search-results">
           {beerSuggestions}
         </ul>
-      </div>
+      </form>
     )
   }
 

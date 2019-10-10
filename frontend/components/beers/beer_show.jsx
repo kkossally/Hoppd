@@ -15,6 +15,7 @@ const mdp = dispatch => {
     fetchBeer: id => dispatch(fetchBeer(id)),
     deleteBeer: id => dispatch(deleteBeer(id)),
     editBeer: () => dispatch(openModal('editBeer')),
+    checkin: () => dispatch(openModal('checkin')),
   }
 }
 
@@ -36,12 +37,11 @@ class BeerShow extends React.Component {
   }
 
   handleDelete() {
-    // debugger
    this.props.deleteBeer(this.props.beer.id).then(() => this.props.history.push('/'));
   }
 
   render() {
-    const { id, name, style, abv, ibu, description, brewery_id, logoURL } = this.props.beer;
+    const { id, name, style, abv, ibu, description, brewery, logoURL } = this.props.beer;
     return (
       <div className="beer-info-box">
         <div className="top">
@@ -50,7 +50,7 @@ class BeerShow extends React.Component {
               <img className="logo" src={logoURL} alt="Beer Logo"/>
               <div className="name">
                 <h1>{name}</h1>
-                <h2>Brewery: {brewery_id}</h2>
+                <h2>Brewery: {brewery}</h2>
                 <h3>{style}</h3>
               </div>
             </div>
@@ -85,7 +85,7 @@ class BeerShow extends React.Component {
         <div className="bottom">
           <div>{description}</div>
           <div className="actions">
-            <div className="check-icon"> 
+            <div className="check-icon" onClick={() => this.props.checkin()}> 
               <img src={window.checkIconURL} alt="Check Icon"/>
             </div>
             <div className="bookmark-icon">

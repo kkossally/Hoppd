@@ -14,7 +14,7 @@ const MainComponent = () => {
         <Header />
         <div className="page">
           <Switch>
-            <Route path="/beers" component={Content} /> {/*This will become the search results page*/}
+            <Route path="/" component={Content} /> {/*This will become the search results page*/}
             {/* This will contain more routes to other pages besides beer show */}
           </Switch>
 

@@ -36,7 +36,8 @@ class BeerIndex extends React.Component {
       return (
         <BeerIndexItem key={beer.id} beer={beer} />
       )
-    })
+    });
+    
     return (
       <div className="beer-list">
         {beers}

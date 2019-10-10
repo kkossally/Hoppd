@@ -152,7 +152,7 @@
 // }
 
 .actions div img {
-  margin: 10% 0;
+  margin: 8% 0;
   -webkit-filter: invert(100%);
   transition: all .3s;
 }
@@ -185,6 +185,10 @@
   font-weight: 700;
   line-height: 50px;
   transition: all .3s;
+}
+
+.actions div:hover {
+  background: #f4b800
 }
 
 .actions div:hover:before {

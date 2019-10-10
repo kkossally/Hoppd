@@ -14,7 +14,7 @@ export default () => (
       <AuthRoute exact path="/" component={Splash} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/beers" component={MainContainer} /> {/*this should not be 
+      <ProtectedRoute path="/" component={MainContainer} /> {/*this should not be 
       a protected route, but it should also not display along with the splash, 
       which it will if the hash routes are the same. Later on, this should route 
       to the search results page, from which visitors can access a beer show page, 

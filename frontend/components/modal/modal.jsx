@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import EditBeerFormContainer from '../beers/edit_beer_form_container';
 import CreateBeerFormContainer from '../beers/create_beer_form_container';
+import CheckinForm from '../checkins/checkin_form';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -17,6 +18,10 @@ function Modal({modal, closeModal}) {
 
     case 'createBeer':
       component = <Route to="/beers" component={CreateBeerFormContainer} />;
+      break;
+
+    case 'checkin':
+      component = <Route to="/beers/:beerId" component={CheckinForm} />;
       break;
 
     default:

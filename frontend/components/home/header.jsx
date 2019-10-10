@@ -26,7 +26,7 @@ const Header = ({ logout }) => {
         </Link>
 
         <ul>
-          <a href="#">The Pub</a>
+          <Link to="/checkins" style={{textTransform: 'uppercase', fontWeight: 'bolder' }}>Pub</Link>
           <Link to="/beers" style={{textTransform: 'uppercase', fontWeight: 'bolder'}}>Beers</Link>
           <a href="#">Supporter</a>
           <a href="#">Help</a>

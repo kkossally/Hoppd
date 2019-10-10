@@ -21,13 +21,9 @@ class SearchContainer extends React.Component {
   }
 
   render() {
-    // const beers = this.props.beers.map(beer => {
-    //   return <li key={beer.id} >{beer}</li>
-    // })
-
     return (
 
-        <Suggestions beers={this.props.beers} />
+      <Suggestions beers={this.props.beers} />
     )
   }
 }

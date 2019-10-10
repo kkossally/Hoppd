@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
-// import * as BeerActions from './actions/beer_actions';
+import * as CheckinActions from './actions/checkin_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -21,17 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   
   //TESTING
-  // window.signup = signup;
-  // window.login = login;
-  // window.logout = logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.fetchBeers = BeerActions.fetchBeers;
-  // window.fetchBeer = BeerActions.fetchBeer;
-  // window.createBeer = BeerActions.createBeer;
-  // window.updateBeer = BeerActions.updateBeer;
-  // window.deleteBeer = BeerActions.deleteBeer;
-  // window.clearBeerErrors = BeerActions.clearBeerErrors;
+  window.fetchCheckins = CheckinActions.fetchCheckins;
+  window.fetchCheckin = CheckinActions.fetchCheckin;
+  window.createCheckin = CheckinActions.createCheckin;
+  window.deleteCheckin = CheckinActions.deleteCheckin;
+  window.clearCheckinErrors = CheckinActions.clearCheckinErrors;
   //TESTING
   
   

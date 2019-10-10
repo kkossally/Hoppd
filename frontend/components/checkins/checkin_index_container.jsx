@@ -27,13 +27,14 @@ class CheckinIndex extends React.Component {
   }
 
   render() {
-    const checkins = this.props.checkins.map(checkin => {
+    const checkins = this.props.checkins.reverse().map(checkin => {
       return (
         <CheckinIndexItem key={checkin.id} checkin={checkin} />
       )
     });
     return (
       <div className="checkin-list">
+        <h3>Global Check-ins</h3>
         {checkins}
       </div>
     )

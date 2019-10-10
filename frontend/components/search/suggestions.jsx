@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import { debounce } from 'lodash';
 // import { connect } from 'react-redux';
 // import { fetchBeers } from '../../actions/beer_actions';
@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 class Suggestions extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { filtered: [] };
+    this.state = { filtered: [], query: "" };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.searchContainer = React.createRef();
   }
+
   
   handleChange(event) {
     let filteredBeers;
@@ -20,9 +23,22 @@ class Suggestions extends React.Component {
     } else {
       filteredBeers = [];
     }
-    this.setState({ filtered: filteredBeers });
+    this.setState({ filtered: filteredBeers, query: event.target.value });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+
+    // debugger
+
+    this.searchContainer.current.blur();
+    
+    this.setState({ query: "" });
+  
+    this.props.receiveFilteredBeers(Object.values(this.state.filtered).map(beer => beer.id));
+
+    // this.props.history.push({ pathname: `/search?query=${this.state.query}`, state: { beers: this.state.filtered } });
+  }
   // handleSubmit(event) {
   //   event.preventDefault();
   //   this.props.submitForm(this.state).then(action => this.props.history.push(`/beers/${action.beer.id}`)).then(() => this.props.closeModal());
@@ -31,6 +47,7 @@ class Suggestions extends React.Component {
 
   render() {
     const beerSuggestions = this.state.filtered.map(beer => {
+      // debugger
       return (
         // <div key={beer.id} className="beer-info-box">
         //   < Link to={`/beers/${beer.id}`}><img src={beer.logoURL} alt="Beer Logo" /></Link>
@@ -47,9 +64,10 @@ class Suggestions extends React.Component {
       )
     });
 
+    // debugger
     return (
-      <form className="search-container">
-        <input type="text" className="textbox" placeholder="Search for beers" onChange={this.handleChange} />
+      <form className="search-container" onSubmit={this.handleSubmit}>
+        <input type="text" className="textbox" ref={this.searchContainer} placeholder="Search for beers" value={this.state.query} onChange={this.handleChange} />
         <img src={window.searchIconURL} alt="Search Icon"/>
         {/* <div className="search-results">
           {beerSuggestions}
@@ -63,4 +81,4 @@ class Suggestions extends React.Component {
 
 }
 
-export default Suggestions;
+export default withRouter(Suggestions);

@@ -1,6 +1,58 @@
-.beer-list {
-  padding: 10px 24px 24px;
+.checkin-list {
+  padding: 24px;
   background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0;
+}
+
+.checkin-list > h3 {
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.checkin-detail {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+
+  display: flex;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.checkin-detail a {
+  color: #c60;
+}
+
+.checkin-detail .top {
+  width: 90%
+}
+
+
+.checkin-detail .logo {
+  padding: 0 0 12px 12px;
+  height: 42px;
+}
+
+.checkin-detail .top > span p {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.rating-comment {
+  padding: 8px;
+  margin-bottom: 12px;
+
+  border: 1px solid #eee;
+  border-radius: 5px;
+
+  font-size: 19px;
+}
+
+.rating-comment span > p {
+  margin-bottom: 12px;
+  overflow-wrap: break-word;
 }
 
 .beer-list .beer-info-box {

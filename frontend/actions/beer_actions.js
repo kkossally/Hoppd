@@ -5,6 +5,7 @@ export const RECEIVE_BEER = "RECEIVE_BEER";
 export const REMOVE_BEER = "REMOVE_BEER";
 export const RECEIVE_BEER_ERRORS = "RECEIVE_BEER_ERRORS";
 export const CLEAR_BEER_ERRORS = "CLEAR_BEER_ERRORS";
+export const RECEIVE_FILTERED_BEERS = "RECEIVE_FILTERED_BEERS";
 
 const receiveBeers = beers => {
   return {
@@ -37,6 +38,13 @@ export const receiveBeerErrors = beerErrors => {
 export const clearBeerErrors = () => {
   return {
     type: CLEAR_BEER_ERRORS,
+  }
+}
+
+export const receiveFilteredBeers = filteredBeers => {
+  return {
+    type: RECEIVE_FILTERED_BEERS,
+    filteredBeers,
   }
 }
 

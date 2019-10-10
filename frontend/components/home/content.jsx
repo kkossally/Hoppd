@@ -9,7 +9,8 @@ const Content = () => {
     <div className="content">
 
       <div className="main-content">
-        <Route exact path="/beers" component={BeerIndexContainer} />
+        <Route path="/beers" component={BeerIndexContainer} />
+        <Route path="/search" component={BeerIndexContainer} />
         <Route exact path="/beers/:beerId" component={BeerShow} />
         <Route exact path="/checkins" component={CheckinIndexContainer} />
       </div>

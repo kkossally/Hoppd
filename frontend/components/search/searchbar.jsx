@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBeers } from '../../actions/beer_actions';
+import { fetchBeers, receiveFilteredBeers } from '../../actions/beer_actions';
 import Suggestions from './suggestions';
 
 const msp = state => {
@@ -12,6 +12,7 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     fetchBeers: () => dispatch(fetchBeers()),
+    receiveFilteredBeers: filteredBeers => dispatch(receiveFilteredBeers(filteredBeers)),
   }
 }
 
@@ -22,7 +23,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <Suggestions beers={this.props.beers} />
+      <Suggestions beers={this.props.beers} receiveFilteredBeers={this.props.receiveFilteredBeers} />
     )
   }
 }

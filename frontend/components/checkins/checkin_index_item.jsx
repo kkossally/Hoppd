@@ -1,18 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CheckinIndexItem = ({ checkin }) => {
-  const { author, beer: { name, brewery } , body, rating } = checkin;
+  const { author, beer: { id, name, brewery, logoURL } , body, rating } = checkin;
+  const beerNameLink = <Link to={`/beers/${id}`}>{name}</Link>;
   return (
     <div className="checkin-detail">
-      <span>
-        <p>{author} had a {name} by {brewery}.</p>
-      </span>
-      <span>
-        <p>{body}</p>
-      </span>
-      <span>
-        {rating}
-      </span>
+
+      {/* profile image icon goes here! */}
+
+      <div className="top">
+        <span>
+          <p>{author} had a {beerNameLink} by {brewery}.</p>
+        </span>
+        <div className="rating-comment">
+          <span>
+            <p>{body}</p>
+          </span>
+          <span>
+           {rating}
+          </span>
+        </div>
+      </div>
+
+      <Link to={`/beers/${id}`}><img className="logo" src={logoURL} alt="Beer Logo" /></Link>
+
     </div>
   )
 }

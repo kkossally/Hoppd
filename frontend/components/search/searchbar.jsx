@@ -15,16 +15,15 @@ const mdp = dispatch => {
   }
 }
 
-class SearchContainer extends React.Component {
+class SearchBar extends React.Component {
   componentDidMount() {
     this.props.fetchBeers();
   }
 
   render() {
     return (
-
       <Suggestions beers={this.props.beers} />
     )
   }
 }
-export default connect(msp, mdp)(SearchContainer);
+export default connect(msp, mdp)(SearchBar);

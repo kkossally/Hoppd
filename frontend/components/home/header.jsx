@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-import SearchContainer from '../search/search_container';
+import SearchBar from '../search/searchbar';
 
 const msp = ({ entities: { users }, session }) => {
   return {
@@ -16,7 +16,7 @@ const mdp = dispatch => {
   }
 }
 
-const Header = ({ logout }) => {
+const Header = ({ logout, currentUser }) => {
   return (
     <header className="home">
 
@@ -33,6 +33,7 @@ const Header = ({ logout }) => {
         </ul>
 
         <div className="profile-dropdown">
+          <span>Hello {currentUser.f_name}</span>
           <img src={window.userIconURL} alt="User icon"/>
             <ul className="dropdown-menu">
               <li><a>Recent Activity</a></li>
@@ -49,7 +50,7 @@ const Header = ({ logout }) => {
         </div>
 
         {/* <div className="search-container"> */}
-          <SearchContainer />
+          <SearchBar />
         {/* </div> */}
         
       </nav>

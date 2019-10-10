@@ -7,19 +7,20 @@ import { Link } from 'react-router-dom';
 class Suggestions extends React.Component {
   constructor(props) {
     super(props);
-    this.filteredBeers = [];
+    this.state = { filtered: [] };
     this.handleChange = this.handleChange.bind(this);
   }
   
   handleChange(event) {
+    let filteredBeers;
     if (event.target.value !== "") {
-      this.filteredBeers = this.props.beers.filter(beer => {
+      filteredBeers = this.props.beers.filter(beer => {
         return beer.name.toLowerCase().includes(event.target.value.toLowerCase());
       })
     } else {
-      this.filteredBeers = [];
+      filteredBeers = [];
     }
-    this.setState({ filtered: this.filteredBeers });
+    this.setState({ filtered: filteredBeers });
   }
 
   // handleSubmit(event) {
@@ -29,7 +30,7 @@ class Suggestions extends React.Component {
   
 
   render() {
-    const beerSuggestions = this.filteredBeers.map(beer => {
+    const beerSuggestions = this.state.filtered.map(beer => {
       return (
         // <div key={beer.id} className="beer-info-box">
         //   < Link to={`/beers/${beer.id}`}><img src={beer.logoURL} alt="Beer Logo" /></Link>

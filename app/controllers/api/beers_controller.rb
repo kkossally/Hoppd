@@ -3,6 +3,8 @@ class Api::BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
+    debugger
+    @beer.logo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default_logo.png')), filename: 'default-logo.png', content_type: 'image/png')
     if @beer.save
       render :show
     else

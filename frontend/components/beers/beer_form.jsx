@@ -37,7 +37,6 @@ class BeerForm extends React.Component {
   }
 
   breweryOptions() {
-    debugger
     return this.props.breweries.map((brewery, index) => {
       const selected = brewery.name === this.props.beer.brewery ? "selected" : "";
       return <option key={index} defaultValue={selected} value={brewery.id}>{brewery.name}</option>

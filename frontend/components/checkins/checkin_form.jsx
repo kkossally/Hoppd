@@ -40,7 +40,7 @@ class Checkin extends React.Component {
     event.preventDefault();
     this.props.clearErrors();
     this.props.createCheckin(this.state)
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push('/checkins'))
       .then(() => this.props.closeModal());
   }
 

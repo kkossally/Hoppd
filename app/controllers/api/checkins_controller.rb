@@ -5,7 +5,7 @@ class Api::CheckinsController < ApplicationController
     @checkin = Checkin.new(checkin_params)
     @checkin.author_id = current_user.id
     if @checkin.save
-      render json: {}
+      render json: @checkin
     else
       render json: @checkin.errors.full_messages, status: 422
     end

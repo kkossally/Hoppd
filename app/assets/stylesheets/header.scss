@@ -44,7 +44,7 @@ header.home {
   justify-content: space-between;
   width: 35%;
   position: relative;
-  left: -30px;
+  left: -15px;
 
   text-transform: uppercase;
   font-weight: 800;
@@ -130,6 +130,8 @@ header.home {
 }
 
 .search-results {
+
+  padding: 8px;
   display: none;
 
   width: 100%;
@@ -138,6 +140,10 @@ header.home {
   top: 32px;
   
   background: white;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0;
+
+  font-size: 16px;
 }
 
 .search-container:focus-within .search-results {

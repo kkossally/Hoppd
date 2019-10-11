@@ -29,7 +29,6 @@ class Suggestions extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    // debugger
 
     this.searchContainer.current.blur();
     
@@ -49,7 +48,6 @@ class Suggestions extends React.Component {
 
   render() {
     const beerSuggestions = this.state.filtered.map(beer => {
-      // debugger
       return (
         // <div key={beer.id} className="beer-info-box">
         //   < Link to={`/beers/${beer.id}`}><img src={beer.logoURL} alt="Beer Logo" /></Link>
@@ -66,7 +64,6 @@ class Suggestions extends React.Component {
       )
     });
 
-    // debugger
     return (
       <form className="search-container" onSubmit={this.handleSubmit}>
         <input type="text" className="textbox" ref={this.searchContainer} placeholder="Search for beers" value={this.state.query} onChange={this.handleChange} />

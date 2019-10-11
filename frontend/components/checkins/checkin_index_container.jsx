@@ -20,16 +20,23 @@ const mdp = dispatch => {
 class CheckinIndex extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
+    // this.state = { checkins: this.props.checkins }
   }
 
   componentDidMount() {
     this.props.fetchCheckins();
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.checkins.length !== this.props.checkins.length) {
+  //     this.props.fetchCheckins();
+  //   }
+  // }
+
   render() {
+    this.props.fetchCheckins();
+
     const checkins = this.props.checkins.reverse().map(checkin => {
-      // debugger
       return (
         <CheckinIndexItem key={checkin.id} checkin={checkin} />
       )

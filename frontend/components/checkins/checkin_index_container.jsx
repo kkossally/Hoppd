@@ -34,7 +34,7 @@ class CheckinIndex extends React.Component {
   // }
 
   render() {
-    this.props.fetchCheckins();
+    // this.props.fetchCheckins();
 
     const checkins = this.props.checkins.reverse().map(checkin => {
       return (

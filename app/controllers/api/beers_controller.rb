@@ -45,7 +45,7 @@ class Api::BeersController < ApplicationController
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :style, :abv, :ibu, :description, :brewery)
+    params.require(:beer).permit(:name, :style, :abv, :ibu, :description, :brewery, :brewery_id)
   end
 
   def errorMapper(errors)

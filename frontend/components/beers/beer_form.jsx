@@ -12,6 +12,7 @@ class BeerForm extends React.Component {
     if (this.props.formType === 'Edit Beer') {
       this.setState(this.props.beer);
     }
+    this.props.fetchBreweries();
   }
   
   componentWillUnmount() {
@@ -32,6 +33,14 @@ class BeerForm extends React.Component {
     return beerStyles.map((style, index) => {
       const selected = style === this.props.beer.style ? "selected" : "";
       return <option key={index} defaultValue={selected} value={style}>{style}</option>
+    })
+  }
+
+  breweryOptions() {
+    debugger
+    return this.props.breweries.map((brewery, index) => {
+      const selected = brewery.name === this.props.beer.brewery ? "selected" : "";
+      return <option key={index} defaultValue={selected} value={brewery.id}>{brewery.name}</option>
     })
   }
 
@@ -77,10 +86,16 @@ class BeerForm extends React.Component {
             <label>Beer Name</label>
               <input className="textbox" type="text" value={this.state.name} onChange={this.update('name')}/>          
 
-            <label>Brewery Name</label>
-              <input className="textbox" type="text" value={this.state.brewery_id} onChange={this.update('brewery_id')}/>
+            {/* <label>Brewery Name</label>
+              <input className="textbox" type="text" value={this.state.brewery_id} onChange={this.update('brewery_id')}/> */}
+          <label>
+              Brewery Name
+              <select className="textbox" name="brewery" onChange={this.update('brewery_id')}>
+                <option value="selected">Select a Brewery</option>
+                {this.breweryOptions()}
+              </select>
+            </label>
           </div>
-          
           <div className="data">
             <label>
               ABV
@@ -99,6 +114,7 @@ class BeerForm extends React.Component {
                 {this.beerStyleOptions()}
               </select>
             </label>
+            
           </div>
           
           <label>Description</label>

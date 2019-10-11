@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :beers, only: [:index, :show, :create, :update, :destroy]
+    resources :breweries, only: [:index]
     resources :checkins, only: [:index, :show, :create, :destroy]
     resources :favorites, only: [:create, :destroy]
   end

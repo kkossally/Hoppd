@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
-import * as FavoriteActions from './actions/favorite_actions';
+import * as BreweryActions from './actions/brewery_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.createFavorite = FavoriteActions.createFavorite;
-  window.deleteFavorite = FavoriteActions.deleteFavorite;
-  window.clearFavoriteErrors = FavoriteActions.clearFavoriteErrors;
+  window.fetchBreweries = BreweryActions.fetchBreweries;
   //TESTING
   
   

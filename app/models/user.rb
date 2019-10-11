@@ -36,6 +36,12 @@ class User < ApplicationRecord
     through: :checkins,
     source: :beer
 
+  has_many :favorites
+
+  has_many :favorite_beers,
+    through: :favorites,
+    source: :beer
+
   # def password_confirmation_match
   #   if password.present? && password != password_confirmation
   #     errors.add(:passwords, "must match.")

@@ -20,6 +20,7 @@ const mdp = dispatch => {
 class CheckinIndex extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
   }
 
   componentDidMount() {
@@ -28,6 +29,7 @@ class CheckinIndex extends React.Component {
 
   render() {
     const checkins = this.props.checkins.reverse().map(checkin => {
+      // debugger
       return (
         <CheckinIndexItem key={checkin.id} checkin={checkin} />
       )

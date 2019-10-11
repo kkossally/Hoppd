@@ -1,0 +1,46 @@
+.checkin-form {
+  margin: 28px auto 88px;
+  padding: 16px;
+  // width: 500px;
+  height: fit-content;
+  border: 2px solid white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+
+  font-size: 14px;
+  color: black;
+}
+
+.checkin-form > * {
+  margin-bottom: 16px;
+  width: 100%;
+  display: flex;
+}
+
+// .checkin-form .review {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+.checkin-form textarea {
+  height: 100px;
+  width: 100%;
+  resize: none;
+}
+
+.beer-form .name {
+  flex-direction: column;
+}
+
+.beer-form .data label:nth-child(-n + 2) {
+  margin-right: 16px;
+  width: 20%;
+}
+
+.beer-form .submit {
+  width: 100%;
+}

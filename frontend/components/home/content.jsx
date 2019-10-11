@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import BeerIndexContainer from '../beers/beer_index_container';
 import BeerShow from '../beers/beer_show';
 import CheckinIndexContainer from '../checkins/checkin_index_container';
+import FavoritesContainer from '../favorites/favorites_container';
 
 const Content = () => {
   return (
@@ -14,7 +15,12 @@ const Content = () => {
         <Route exact path="/checkins" component={CheckinIndexContainer} />
       </div>
 
-      <div className="sidebar"></div>
+      <div className="sidebar">
+        <div className="sidebar-content">
+          <h3>Favorite Beers</h3>
+          <FavoritesContainer />
+        </div>
+      </div>
 
     </div>
   )

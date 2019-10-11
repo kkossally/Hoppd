@@ -25,5 +25,7 @@ class Beer < ApplicationRecord
     through: :checkins,
     source: :author
 
+  has_many :favorites
+  
   has_one_attached :logo
 end

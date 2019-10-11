@@ -37,6 +37,8 @@ class Suggestions extends React.Component {
   
     this.props.receiveFilteredBeers(Object.values(this.state.filtered).map(beer => beer.id));
 
+    this.props.history.push('/beers');
+
     // this.props.history.push({ pathname: `/search?query=${this.state.query}`, state: { beers: this.state.filtered } });
   }
   // handleSubmit(event) {

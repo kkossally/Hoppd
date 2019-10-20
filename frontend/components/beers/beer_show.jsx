@@ -109,7 +109,23 @@ class BeerShow extends React.Component {
         <div className="details">
           <span>{abv}% ABV</span>
           <span>{ibu} IBU</span>
-          <span>Rating: {rating}</span>
+          <span className="caps">
+            <div className="caps-outer">
+              <img src={window.capIconURL} alt="Cap Icon" />
+              <img src={window.capIconURL} alt="Cap Icon" />
+              <img src={window.capIconURL} alt="Cap Icon" />
+              <img src={window.capIconURL} alt="Cap Icon" />
+              <img src={window.capIconURL} alt="Cap Icon" />
+              <div className="caps-inner">
+                <img src={window.capIconURL} alt="Cap Icon"/>
+                <img src={window.capIconURL} alt="Cap Icon"/>
+                <img src={window.capIconURL} alt="Cap Icon"/>
+                <img src={window.capIconURL} alt="Cap Icon"/>
+                <img src={window.capIconURL} alt="Cap Icon"/>
+              </div>
+            </div>
+            ({rating})
+          </span>
           <span>{total} Ratings</span>
           {/* <span>307,929 Ratings</span> */}
         </div>

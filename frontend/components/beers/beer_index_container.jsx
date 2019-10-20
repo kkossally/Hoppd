@@ -36,11 +36,12 @@ class BeerIndex extends React.Component {
     this.props.fetchBeers();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.filteredBeers !== this.props.filteredBeers) {
-      this.setState({ filtered: this.props.filteredBeers })
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   debugger
+  //   if (prevProps.filteredBeers !== this.props.filteredBeers) {
+  //     this.setState({ filtered: this.props.filteredBeers })
+  //   }
+  // }
 
   update(field) {
     return event => this.setState({ [field]: event.target.value });
@@ -55,7 +56,7 @@ class BeerIndex extends React.Component {
     } else {
       filteredBeers = [];
     }
-    this.setState({ filtered: filteredBeers });
+    this.setState({ filtered: filteredBeers, query: "" });
   }
 
   render() {
@@ -77,7 +78,7 @@ class BeerIndex extends React.Component {
           <form onSubmit={this.handleChange} > 
             <div className="search-container">
               <img src={window.searchIconURL} alt="Search Icon" />
-              <input type="text" className="textbox" placeholder="Search for beers" onChange={this.update('query')}  />
+              <input type="text" className="textbox" placeholder="Search for beers" value={this.state.query} onChange={this.update('query')}  />
             </div>
 
             <input className="submit" type="submit" value="Search"/>

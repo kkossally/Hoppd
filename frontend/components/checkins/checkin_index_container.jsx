@@ -7,20 +7,20 @@ import CheckinIndexItem from './checkin_index_item';
 const msp = state => {
   return {
     checkins: Object.values(state.entities.checkins),
-  }
-}
+  };
+};
 
 const mdp = dispatch => {
   return {
     fetchCheckins: () => dispatch(fetchCheckins()),
     deleteCheckin: id => dispatch(deleteCheckin(id)),
-  }
-}
+  };
+};
 
 class CheckinIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { checkins: this.props.checkins }
+    this.state = { checkins: this.props.checkins }
   }
 
   componentDidMount() {
@@ -35,12 +35,12 @@ class CheckinIndex extends React.Component {
 
   render() {
     // this.props.fetchCheckins();
-
+    console.log(this.props.checkins);
     const checkins = this.props.checkins.reverse().map(checkin => {
       return (
         <CheckinIndexItem key={checkin.id} checkin={checkin} />
-      )
-    });
+        )
+      });
     return (
       <div className="checkin-list">
         <h3>Global Check-ins</h3>

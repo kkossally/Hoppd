@@ -2,7 +2,7 @@ import { RECEIVE_CHECKIN_ERRORS, CLEAR_CHECKIN_ERRORS, RECEIVE_CHECKIN } from '.
 
 export default (state = [], action) => {
   Object.freeze(state);
-
+  
   switch (action.type) {
     case RECEIVE_CHECKIN_ERRORS:
       return action.checkinErrors;

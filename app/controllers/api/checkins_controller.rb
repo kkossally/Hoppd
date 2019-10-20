@@ -5,7 +5,7 @@ class Api::CheckinsController < ApplicationController
     @checkin = Checkin.new(checkin_params)
     @checkin.author_id = current_user.id
     if @checkin.save
-      render json: @checkin
+      render :show
     else
       render json: @checkin.errors.full_messages, status: 422
     end
@@ -37,7 +37,7 @@ class Api::CheckinsController < ApplicationController
   private
 
   def checkin_params
-    params.require(:checkin).permit(:body, :rating, :author_id, :beer_id)
+    params.require(:checkin).permit(:id, :body, :rating, :author_id, :beer_id)
   end
 
 end

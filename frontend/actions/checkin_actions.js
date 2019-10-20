@@ -52,7 +52,7 @@ export const fetchCheckin = id => dispatch => {
 
 export const createCheckin = checkin => dispatch => {
   return CheckinApiUtil.createCheckin(checkin)
-  .then(checkin => dispatch(receiveCheckin(checkin)), errors => dispatch(receiveCheckinErrors(errors.responseJSON)));
+  .then(checkinn => dispatch(receiveCheckin(checkinn)), errors => dispatch(receiveCheckinErrors(errors.responseJSON)));
 };
 
 export const deleteCheckin = id => dispatch => {

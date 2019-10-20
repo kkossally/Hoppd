@@ -4,9 +4,9 @@ import { fetchCheckins, deleteCheckin } from '../../actions/checkin_actions';
 import { openModal } from '../../actions/modal_actions'; // for opening the checkin show and delete
 import CheckinIndexItem from './checkin_index_item';
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return {
-    checkins: Object.values(state.entities.checkins),
+    checkins: ownProps.filteredCheckins || Object.values(state.entities.checkins),
   };
 };
 
@@ -35,8 +35,8 @@ class CheckinIndex extends React.Component {
 
   render() {
     // this.props.fetchCheckins();
-    console.log(this.props.checkins);
-    const checkins = this.props.checkins.reverse().map(checkin => {
+    const filteredCheckins = this.props.checkin_ids ? this.props.checkins.filter(checkin => this.props.checkin_ids.includes(checkin.id)) : this.props.checkins;
+    const checkins = filteredCheckins.reverse().map(checkin => {
       return (
         <CheckinIndexItem key={checkin.id} checkin={checkin} />
         )

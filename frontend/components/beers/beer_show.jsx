@@ -4,6 +4,7 @@ import { round } from 'lodash';
 import { fetchBeer, deleteBeer } from '../../actions/beer_actions';
 import { createFavorite } from '../../actions/favorite_actions';
 import { openModal } from '../../actions/modal_actions';
+import CheckinIndexContainer from '../checkins/checkin_index_container';
 
 const msp = (state, ownProps) => {
   const beer = state.entities.beers[ownProps.match.params.beerId] || {};
@@ -66,8 +67,10 @@ class BeerShow extends React.Component {
 
   render() {
     const { id, name, style, abv, ibu, description, brewery, logoURL, checkins } = this.props.beer;
+    const checkin_ids = checkins ? checkins.map(checkin => checkin.id) : [];
     const [total, rating] = this.calculateRating(checkins);
     return (
+      <>
       <div className="beer-info-box">
         <div className="top">
           <div className="info">
@@ -129,6 +132,8 @@ class BeerShow extends React.Component {
           </div>
         </div>
       </div>
+      <CheckinIndexContainer checkin_ids={checkin_ids} />
+      </>
     )
   }
 }

@@ -9,7 +9,7 @@ const msp = state => {
   const filteredBeers = state.ui.filteredBeers.map(id => parseInt(id));
   const allBeers = Object.values(state.entities.beers);
   return {
-    beers: allBeers,
+    beers: allBeers.slice(0, 5),
     filteredBeers: allBeers.filter(beer => filteredBeers.includes(beer.id)),
   }
 }
@@ -28,7 +28,7 @@ const mdp = dispatch => {
 class BeerIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { query: "", filtered: this.props.filteredBeers };
+    this.state = { query: "", beers: this.props.beers, filtered: this.props.filteredBeers };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -60,17 +60,14 @@ class BeerIndex extends React.Component {
   }
 
   render() {
-    let beers;
-    if (this.state.filtered) {
+    let beers = (this.state.filtered.length !== 0) ? this.state.filtered : this.props.beers;
+    debugger
 
-      beers = this.state.filtered.map(beer => {
-        return (
-          <BeerIndexItem key={beer.id} beer={beer} />
-          )
-        });
-    } else {
-      beers = [];
-    }
+    beers = beers.map(beer => {
+      return (
+        <BeerIndexItem key={beer.id} beer={beer} />
+        )
+    });
         
     return (
       <div>

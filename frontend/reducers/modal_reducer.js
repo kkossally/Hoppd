@@ -6,7 +6,7 @@ export default (state = null, action) => {
 
   switch (action.type) {
     case OPEN_MODAL:
-      return action.modal;
+      return { modalName: action.modalName, beerId: action.id };
 
     case CLOSE_MODAL:
       return null;

@@ -11,13 +11,13 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.modalName) {
     case 'editBeer':
-      component = <Route to="/beers/:beerId" component={EditBeerFormContainer} />;
+      component = <EditBeerFormContainer beerId={modal.id} />;
       break;
 
     case 'createBeer':
-      component = <Route to="/beers" component={CreateBeerFormContainer} />;
+      component = <CreateBeerFormContainer />;
       break;
 
     case 'checkin':

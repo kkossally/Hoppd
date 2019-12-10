@@ -37,7 +37,6 @@ class BeerIndex extends React.Component {
   }
 
   // componentDidUpdate(prevProps) {
-  //   debugger
   //   if (prevProps.filteredBeers !== this.props.filteredBeers) {
   //     this.setState({ filtered: this.props.filteredBeers })
   //   }
@@ -61,8 +60,7 @@ class BeerIndex extends React.Component {
 
   render() {
     let beers = (this.state.filtered.length !== 0) ? this.state.filtered : this.props.beers;
-    debugger
-
+    
     beers = beers.map(beer => {
       return (
         <BeerIndexItem key={beer.id} beer={beer} />

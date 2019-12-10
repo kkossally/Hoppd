@@ -7,8 +7,9 @@ import BeerForm from './beer_form';
 
 const msp = (state, ownProps) => {
   const defaultBeer = { name: "", style: "", abv: "", ibu: "", description: "", brewery_id: "" };
-  const splitPath = ownProps.location.pathname.split('/');
-  const beerId = splitPath[splitPath.length - 1];
+  // const splitPath = ownProps.location.pathname.split('/');
+  // const beerId = splitPath[splitPath.length - 1];
+  const beerId = ownProps.beerId;
   const beer = state.entities.beers[beerId] || defaultBeer;
   const breweries = Object.values(state.entities.breweries);
   return {
@@ -18,7 +19,7 @@ const msp = (state, ownProps) => {
     beer,
     breweries,
   }
-}
+};
 
 const mdp = dispatch => {
   return {
@@ -29,20 +30,27 @@ const mdp = dispatch => {
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearBeerErrors()),
   }
-}
+};
 
-class EditBeerForm extends React.Component {
-  
-  componentDidMount() {
-    this.props.fetchBeer(this.props.beerId);
-  }
+// class EditBeerForm extends React.Component {
 
-  render () {
+  // componentDidMount() {
+  //   this.props.fetchBeer(this.props.beerId);
+  // }
+
+//   render () {
+//     const props = this.props;
+//     return (
+//       <BeerForm {...props} />
+//     );
+//   }
+// }
+
+const EditBeerForm = () => {
     const props = this.props;
     return (
       <BeerForm {...props} />
-    );
-  }
+    )
 }
 
 export default connect(msp, mdp)(EditBeerForm);

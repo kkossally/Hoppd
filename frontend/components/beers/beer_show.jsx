@@ -18,7 +18,7 @@ const mdp = dispatch => {
     fetchBeer: id => dispatch(fetchBeer(id)),
     deleteBeer: id => dispatch(deleteBeer(id)),
     createFavorite: favorite => dispatch(createFavorite(favorite)),
-    editBeer: () => dispatch(openModal('editBeer')),
+    editBeer: (beerId) => dispatch(openModal('editBeer', beerId)),
     checkin: () => dispatch(openModal('checkin')),
   }
 }
@@ -78,7 +78,7 @@ class BeerShow extends React.Component {
               <img className="logo" src={logoURL} alt="Beer Logo"/>
               <div className="name">
                 <h1>{name}</h1>
-                <h2>Brewery: {brewery}</h2>
+                <h2>{brewery}</h2>
                 <h3>{style}</h3>
               </div>
             </div>
@@ -139,7 +139,7 @@ class BeerShow extends React.Component {
             <div className="bookmark-icon" onClick={() => this.props.createFavorite({beer_id: id})}>
               <img src={window.plusIconURL} alt="Plus Icon"/>
             </div>
-            <div className="edit-icon" onClick={() => this.props.editBeer()}>
+            <div className="edit-icon" onClick={() => this.props.editBeer(id)}>
               <img src={window.pencilIconURL} alt="Edit Icon" />
             </div>
             <div className="delete-icon" onClick={this.handleDelete}>

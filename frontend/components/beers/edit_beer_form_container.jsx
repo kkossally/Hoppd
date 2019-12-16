@@ -32,25 +32,26 @@ const mdp = dispatch => {
   }
 };
 
-// class EditBeerForm extends React.Component {
+class EditBeerForm extends React.Component {
 
-  // componentDidMount() {
-  //   this.props.fetchBeer(this.props.beerId);
-  // }
+  componentDidMount() {
+    this.props.fetchBeer(this.props.beerId);
+  }
 
-//   render () {
-//     const props = this.props;
-//     return (
-//       <BeerForm {...props} />
-//     );
-//   }
-// }
-
-const EditBeerForm = () => {
+  render () {
     const props = this.props;
     return (
       <BeerForm {...props} />
-    )
+    );
+  }
 }
+
+// const EditBeerForm = (props) => {
+//   debugger
+//     // const props = this.props;
+//     return (
+//       <BeerForm {...props} />
+//     )
+// }
 
 export default connect(msp, mdp)(EditBeerForm);

@@ -25,7 +25,9 @@ class Api::BeersController < ApplicationController
   end
 
   def update
+    # debugger
     @beer = Beer.find_by(id: params[:id])
+    debugger
     if @beer.update(beer_params)
       render :show
     else

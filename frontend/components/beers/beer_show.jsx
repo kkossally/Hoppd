@@ -19,7 +19,7 @@ const mdp = dispatch => {
     deleteBeer: id => dispatch(deleteBeer(id)),
     createFavorite: favorite => dispatch(createFavorite(favorite)),
     editBeer: (beerId) => dispatch(openModal('editBeer', beerId)),
-    checkin: () => dispatch(openModal('checkin')),
+    checkin: (beerId) => dispatch(openModal('checkin', beerId)),
   }
 }
 
@@ -133,7 +133,7 @@ class BeerShow extends React.Component {
         <div className="bottom">
           <div className= "bottom-description">{description}</div>
           <div className="actions">
-            <div className="check-icon" onClick={() => this.props.checkin()}> 
+            <div className="check-icon" onClick={() => this.props.checkin(id)}> 
               <img src={window.checkIconURL} alt="Check Icon"/>
             </div>
             <div className="bookmark-icon" onClick={() => this.props.createFavorite({beer_id: id})}>

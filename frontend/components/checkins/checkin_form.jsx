@@ -4,8 +4,9 @@ import { createCheckin, clearCheckinErrors } from '../../actions/checkin_actions
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  const splitPath = ownProps.location.pathname.split('/');
-  const beerId = splitPath[splitPath.length - 1];
+  // const splitPath = ownProps.location.pathname.split('/');
+  // const beerId = splitPath[splitPath.length - 1];
+  const beerId = ownProps.beerId;
   return {
     errors: state.errors.checkins,
     checkin: { body: "", rating: 0, beer_id: beerId },

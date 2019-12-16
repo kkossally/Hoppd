@@ -26,6 +26,7 @@ class BeerForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.clearErrors();
+    // const { id, ...updatedBeer } = this.state;
     this.props.submitForm(this.state).then(action => this.props.history.push(`/beers/${action.beer.id}`)).then(() =>  this.props.closeModal());
   }
 

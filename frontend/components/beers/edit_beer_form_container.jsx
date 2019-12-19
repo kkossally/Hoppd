@@ -47,7 +47,6 @@ class EditBeerForm extends React.Component {
 }
 
 // const EditBeerForm = (props) => {
-//   debugger
 //     // const props = this.props;
 //     return (
 //       <BeerForm {...props} />

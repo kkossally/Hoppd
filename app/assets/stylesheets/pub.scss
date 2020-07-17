@@ -26,9 +26,13 @@
 }
 
 .checkin-detail .top {
-  width: 90%
+  width: 100%;
 }
 
+.checkin-detail .top span {
+  display: flex;
+  justify-content: space-between;
+}
 
 .checkin-detail .logo {
   height: 42px;
@@ -42,6 +46,8 @@
 .rating-comment {
   padding: 8px;
   margin-bottom: 12px;
+
+  width: 90%;
 
   border: 1px solid #eee;
   border-radius: 5px;

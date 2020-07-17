@@ -6,6 +6,7 @@ import Splash from './session/splash';
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import MainContainer from './home/main_container';
+import Footer from './home/footer';
 
 export default () => (
   <div>
@@ -20,6 +21,7 @@ export default () => (
       to the search results page, from which visitors can access a beer show page, 
       but not an edit or check-in page*/}
     </Switch>
+    <Footer></Footer>
   </div>
   
 );

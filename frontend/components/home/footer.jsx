@@ -3,7 +3,12 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <ul>
+      <nav>
+        <a href="">Beers</a>
+        <a href="">Breweries</a>
+      </nav>
+
+      <div className="social" >
         <a href="http://www.linkedin.com/in/kkossally">
           <img src={window.linkedInURL} alt="LinkedIn"/>
         </a>
@@ -13,7 +18,7 @@ const Footer = () => {
         <a href="https://angel.co/u/kkossally">
           <img src={window.angelListURL} alt="AngelList"/>
         </a>
-      </ul>
+      </div>
     </footer>
   )
 }

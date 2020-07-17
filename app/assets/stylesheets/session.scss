@@ -1,0 +1,54 @@
+.login-box, .signup-box {
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.login-box {
+  width: 400px;
+  height: 560px;
+}
+
+.signup-box {
+  width: 600px;
+  height: 740px;
+
+  font-size: 14px;
+}
+
+.logo-box {
+  text-align: center;
+
+  h1 {
+    color: #3f4040;
+  }
+
+  h3 {
+    color: #909090;
+  }
+}
+
+.login-box form {
+  width: 360px;
+ 
+  color: #cccccc;
+}
+
+.signup-box form {
+  width: 570px;
+}
+
+.login-box form > * , .demo-login {
+  width: 300px;
+}

@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="session-masthead">
+      <div className="session masthead">
         <div className="masthead-inner login-box" >
           <Link className="logo-box" to='/'>
             <h1>Hoppd</h1>

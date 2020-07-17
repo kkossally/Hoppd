@@ -1,18 +1,33 @@
 footer {
-  height: 74px;
-}
+  
+  nav, .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav {
+    height: 150px;
+    padding: 20px;
+    background-color: #1e1f1d;
+  }
+  
+  .social {
+    height: 74px;
+    background-color: #fbfbfb;
+    
+    img {
+      height: 40px;
+    }
+  }
 
-footer ul {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer a {
- margin: 0 20px; 
-}
-
-footer img {
-  height: 50px;
+  a {
+    margin: 0 20px; 
+    font-size: 22px;
+    color: #ffffff;
+  }
+  
+  img:hover, a:hover {
+    opacity: .5;
+  }  
 }

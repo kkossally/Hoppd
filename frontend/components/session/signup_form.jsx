@@ -76,7 +76,7 @@ class SignupForm extends React.Component {
   render() {
     const {username, email, password, password_confirmation, f_name, l_name } = this.state;
     return (
-      <div className="session-masthead">
+      <div className="session masthead">
 
         <div className="masthead-inner signup-box">
           <Link className="logo-box" to='/'>

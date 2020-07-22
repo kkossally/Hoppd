@@ -5,7 +5,7 @@ module.exports = {
   entry: "./frontend/hoppd.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   module: {
     rules: [

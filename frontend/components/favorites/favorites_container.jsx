@@ -16,25 +16,37 @@ const mdp = dispatch => {
   }
 }
 
-const FavoritesContainer = (props) => {
-  const beers = props.favoriteBeers.map(beer => {
-    return (
-      <div key={beer.id} className="beer-info-box">
-        <div className="basic-info">
-          <Link to={`/beers/${beer.id}`}><img className="logo" src={beer.logoURL} alt="Beer Logo" /></Link>
-          <div className="name">
-            <Link to={`/beers/${beer.id}`}><h1>{beer.name}</h1></Link>
-            <h2>{beer.brewery}</h2>
+// const FavoritesContainer = (props) => {
+class Favorites extends React.Component {
+  constructor (props) {
+    super(props);
+  }
+  
+  componentDidUpdate() {
+
+  }
+
+  render() {
+    const beers = this.props.favoriteBeers.map(beer => {
+      return (
+        <div key={beer.id} className="beer-info-box">
+          <div className="basic-info">
+            <Link to={`/beers/${beer.id}`}><img className="logo" src={beer.logoURL} alt="Beer Logo" /></Link>
+            <div className="name">
+              <Link to={`/beers/${beer.id}`}><h1>{beer.name}</h1></Link>
+              <h2>{beer.brewery}</h2>
+            </div>
           </div>
         </div>
+      )
+    });
+
+    return (
+      <div>
+        {beers}
       </div>
     )
-  });
-  return (
-    <div>
-      {beers}
-    </div>
-  )
+  }
 }
 
-export default connect(msp, mdp)(FavoritesContainer)
+export default connect(msp, mdp)(Favorites)

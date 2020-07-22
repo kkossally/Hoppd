@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchBeer, updateBeer, deleteBeer, clearBeerErrors } from '../../actions/beer_actions';
 import { fetchBreweries } from '../../actions/brewery_actions';
 import { closeModal } from '../../actions/modal_actions';
@@ -53,4 +54,4 @@ class EditBeerForm extends React.Component {
 //     )
 // }
 
-export default connect(msp, mdp)(EditBeerForm);
+export default connect(msp, mdp)(withRouter(EditBeerForm));

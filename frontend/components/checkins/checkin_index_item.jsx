@@ -12,6 +12,7 @@ const CheckinIndexItem = ({ checkin }) => {
       <div className="top">
         <span>
           <p>{author} had a {beerNameLink} by {brewery}.</p>
+          <Link to={`/beers/${id}`}><img className="logo" src={logoURL} alt="Beer Logo" /></Link>
         </span>
         <div className="rating-comment">
           <span>
@@ -23,7 +24,6 @@ const CheckinIndexItem = ({ checkin }) => {
         </div>
       </div>
 
-      <Link to={`/beers/${id}`}><img className="logo" src={logoURL} alt="Beer Logo" /></Link>
 
     </div>
   )

@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { createCheckin, clearCheckinErrors } from '../../actions/checkin_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  // const splitPath = ownProps.location.pathname.split('/');
-  // const beerId = splitPath[splitPath.length - 1];
   const beerId = ownProps.beerId;
   return {
     errors: state.errors.checkins,
@@ -106,4 +105,4 @@ class Checkin extends React.Component {
 
 }
 
-export default connect(msp, mdp)(Checkin)
+export default connect(msp, mdp)(withRouter(Checkin))

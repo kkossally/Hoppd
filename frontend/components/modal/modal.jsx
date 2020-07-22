@@ -21,7 +21,7 @@ function Modal({modal, closeModal}) {
       break;
 
     case 'checkin':
-      component = <CheckinForm beerId={modal.id} />;
+      component = <CheckinForm beerId={modal.beerId} />;
       break;
 
     default:

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import beerStyles from './beer_styles';
 
 class BeerForm extends React.Component {
@@ -128,7 +129,7 @@ class BeerForm extends React.Component {
   }
 }
 
-export default BeerForm;
+export default withRouter(BeerForm);
 
 // <div>
 {/* <button onClick={() => this.props.deleteBeer(this.props.beer.id)}>Delete Beer</button> */}

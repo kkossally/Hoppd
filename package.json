@@ -2,28 +2,28 @@
   "name": "hoppd",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel": "^6.23.0",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.1.0",
     "loader": "^2.1.1",
-    "lodash": "^4.17.15",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.2",
-    "redux": "^4.0.4",
+    "lodash": "^4.17.19",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.41.0"
+    "webpack": "^4.43.0"
   },
   "scripts": {
     "start": "webpack -w --mode=development",
     "postinstall": "webpack"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.12"
   },
   "engines": {
     "node": "10.13.0",

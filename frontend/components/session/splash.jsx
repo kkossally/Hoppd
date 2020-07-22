@@ -5,11 +5,6 @@ export default () => {
   return (
     <>
     <div className="splash masthead">
-          
-      <header>
-        <Link to='/signup'>Create An Account</Link>
-        <Link to='/login'>Sign In</Link>
-      </header>
 
       <div className="masthead-content">
         <section>

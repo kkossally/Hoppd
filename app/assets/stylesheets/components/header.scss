@@ -1,13 +1,14 @@
 header.splash {
   height: 100px;
   width: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
   text-align: center;
+  align-items: center;
   
-  a {
-    margin-right: 15px;
+  div.button {
+    margin-left: 15px;
     padding: 20px;
     border: 2px solid white;
     border-radius: 5px;
@@ -19,175 +20,188 @@ header.splash {
     transition: .5s;
   }
   
-  a:hover {
+  div.button:hover {
     cursor: pointer;
     background-color: white;
     color: black;
   }
 }
 
-header.protected {
+header.internal {
   width: 100%;
   position: fixed;
-  display: flex;
-  justify-content: center;
   background: #ffcc00;
+  height: 50px;
   
   nav {
     padding: 0 12px;
-    height: 50px;
+    margin: 0 auto;
+    height: inherit;
     width: 100%;
     max-width: 1050px;
     display: flex;
     justify-content: space-between;
-    
-    // background: cadetblue;
-    
-    line-height: 50px;
-    font-size: 18px;
-    color: white;
+    // align-items: center;
 
-    .logo-box {
-      // margin-right: 50px;
-      line-height: normal;
-
-      h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 40px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: white;
-      }
-
-      h3 {
-        font-size: 10px;
-        color: white;
-      }
-    }
-
-    ul {
+    .right, .left {
+      height: inherit;
       display: flex;
-      justify-content: space-between;
-      width: 35%;
-      position: relative;
-      left: -15px;
-    }
-
-    a.session-button {
-      margin-right: 15px;
-      padding: 8px;
-      border: 2px solid white;
-      border-radius: 5px;
-      line-height: 50%;
-      font-size: 16px;
-      
+      align-items: center;
+      font-size: 18px;
       color: white;
-      transition: .5s;
     }
 
-    a.session-button:hover {
-      cursor: pointer;
-      background-color: white;
-      color: black;
-    }
-    
-    .profile-dropdown {
-      position: relative;
-      // right: -70px;
+    .left {
       
-      min-width: 180px;
-      display: flex;
-      justify-content: space-between;
-      cursor: pointer;
-      // border: 1px solid white;
-      
-      span {
-        font-size: 80%;
-        font-weight: 600;
-      }
-      
-      img {
-        width: 35px;
-        display: block;
-        margin: 7.5px auto;
-      }
-      
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        left: -10px;
-        top: 50px;
-        z-index: 1;
-        background: #2c2c2c;
-        font-size: 17px;
-        
-        li {
-          border-bottom: 1px solid #444;
-          width: 200px;
+      width: 65%;
+
+      .logo-box {
+
+        margin-right: 40px;
+
+        h1 {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 28px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: white;
         }
-        
-        a {
-          padding: 12px;
-          width: 200px;
-        }
-        
-        a:hover {
-          cursor: pointer;
+
+        h3 {
+          margin: 0;
+          font-size: 7px;
+          letter-spacing: 1.5px;
+          color: white;
         }
       }
-    }
-    
-    .profile-dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    
-    .search-container {
-      height: 35px;
-      width: 240px;
-      
-      display: flex;
-      align-self: center;
-      position: relative;
-      
-      border-radius: 5px;
-      
-      background: white;
-      color: black;
-      
-      input {
-        height: 100%;
-        width: 100%;
-        
-        border: none;
-        outline-offset: unset;
-        outline: none;
+
+      ul {
+        a { margin-right: 25px; }
       }
-      
-      img {
-        height: 45%;
-        margin: auto 5px;
-        -webkit-filter: invert(80%);
-      }
-      
-      .search-results {
+
+      a.session-button {
+        margin-right: 15px;
         padding: 8px;
-        display: none;
+        border: 2px solid white;
+        border-radius: 5px;
+        line-height: 50%;
+        font-size: 16px;
         
-        width: 100%;
+        color: white;
+        transition: .5s;
+      }
+
+      a.session-button:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+      }
+    }
+
+    .right {
+
+      justify-content: space-between;
+      width: 30%;
+
+      .profile-dropdown {
+        position: relative;
+        margin-right: 10px;
         
-        position: absolute;
-        top: 32px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        // border: 1px solid white;
+        
+        span {
+          font-size: 80%;
+          font-weight: 600;
+        }
+        
+        img {
+          width: 35px;
+          display: block;
+          margin: 7.5px auto;
+        }
+        
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          left: -10px;
+          top: 50px;
+          z-index: 1;
+          background: #2c2c2c;
+          font-size: 17px;
+          
+          li {
+            border-bottom: 1px solid #444;
+            height: 40px;
+            width: 200px;
+          }
+          
+          a {
+            padding: 12px;
+            width: 200px;
+            line-height: 40px;
+          }
+          
+          a:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    
+      .profile-dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      
+      .search-container {
+        height: 35px;
+        width: 240px;
+        
+        display: flex;
+        align-self: center;
+        position: relative;
+        
+        border-radius: 5px;
         
         background: white;
+        color: black;
         
-        box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0;
+        input {
+          height: 100%;
+          width: 100%;
+          
+          border: none;
+          outline-offset: unset;
+          outline: none;
+        }
         
-        font-size: 16px;
+        img {
+          height: 45%;
+          margin: auto 5px;
+          -webkit-filter: invert(80%);
+        }
+        
+        .search-results {
+          padding: 8px;
+          display: none;
+          
+          width: 100%;
+          
+          position: absolute;
+          top: 32px;
+          
+          background: white;
+          
+          box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0;
+          
+          font-size: 16px;
+        }
       }
-    }
 
-    .search-container:focus-within .search-results {
-      display: block
+      .search-container:focus-within .search-results {
+        display: block
+      }
     }
   }
 }

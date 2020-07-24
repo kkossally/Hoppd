@@ -1,20 +1,13 @@
-.page {
-  margin-top: 50px;
+#background {
+  padding-top: 80px;
   width: 100%;
-  min-height: calc(100% - 50px);
-  position: absolute;
   background: #f5f2e8;
 
   display: flex;
   justify-content: center;
-
-  z-index: -1;
 }
 
-.content {
-  // border: 4px solid black;
-  
-  margin-top: 30px;
+.content {  
   padding: 0 10px;
   width: 100%;
   max-width: 1050px;
@@ -24,15 +17,13 @@
 }
 
 .main-content {
-  // border: 4px solid indianred;
   width: 65%;
+
+  > * {
+    margin-bottom: 16px;
+  }
 }
 
 .sidebar {
-  // border: 4px solid cadetblue;
-  width: 300px;
-}
-
-.main-content > * {
-  margin-bottom: 16px;
+  width: 30%;
 }

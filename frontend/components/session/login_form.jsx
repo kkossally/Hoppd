@@ -22,10 +22,12 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state)
     this.props.clearErrors();
     this.props.submitForm(user);
+    this.props.closeModal;
   }
 
   demoLogin() {
     this.props.submitForm({ username: "jbarnes", password: "hiphop" });
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -48,7 +50,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="session masthead">
+      // <div className="session masthead">
         <div className="masthead-inner login-box" >
           <Link className="logo-box" to='/'>
             <h1>Hoppd</h1>
@@ -70,7 +72,7 @@ class LoginForm extends React.Component {
             <h3>New around here? {this.props.signUpLink}</h3>
           </section>
         </div>
-      </div>
+      // </div>
     )
   }
 }

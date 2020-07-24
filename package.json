@@ -19,7 +19,7 @@
     "webpack": "^4.43.0"
   },
   "scripts": {
-    "start": "webpack -w --mode=development",
+    "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "devDependencies": {

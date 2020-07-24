@@ -1,16 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 
-export default () => {
+const mdp = dispatch => {
+  return {
+    login: () => dispatch(openModal('login')),
+    signup: () => dispatch(openModal('signup'))
+  }
+}
+
+const Splash = (props) => {
   return (
     <>
     <div className="splash masthead">
 
+      <header className="splash">
+        <div className="button" onClick={props.signup}>Create An Account</div>
+        <div className="button" onClick={props.login}>Sign In</div>
+      </header>
+
       <div className="masthead-content">
-        <section>
-          <img className="ut-logo-bottles" src={window.utLogoBottlesURL} alt="Logo"/>
-          <h1>Hoppd</h1>
-          <h3>Be hoppy</h3>
+        <section className="left">
+          <img src={window.uncaskdLogoURL} alt="Logo"/>
           <div className="short-rule"/>
           <h2>Discover and share the best beer.</h2>
         </section>
@@ -41,3 +52,5 @@ export default () => {
     </>
   )
 }
+
+export default connect(null, mdp)(Splash);

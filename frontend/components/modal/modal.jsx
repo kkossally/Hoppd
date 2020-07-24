@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container';
 import EditBeerFormContainer from '../beers/edit_beer_form_container';
 import CreateBeerFormContainer from '../beers/create_beer_form_container';
 import CheckinForm from '../checkins/checkin_form';
@@ -22,6 +24,14 @@ function Modal({modal, closeModal}) {
 
     case 'checkin':
       component = <CheckinForm beerId={modal.beerId} />;
+      break;
+
+    case 'login':
+      component = <LoginFormContainer />
+      break;
+
+    case 'signup':
+      component = <SignupFormContainer />
       break;
 
     default:

@@ -47,6 +47,7 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state, { birthday });
     if (this.state.password === this.state.password_confirmation) {
       this.props.submitForm(user);
+      this.props.closeModal();
     } else {
       this.props.dispatchErrors(['Please confirm your password.']);
     }
@@ -76,7 +77,7 @@ class SignupForm extends React.Component {
   render() {
     const {username, email, password, password_confirmation, f_name, l_name } = this.state;
     return (
-      <div className="session masthead">
+      // <div className="session masthead">
 
         <div className="masthead-inner signup-box">
           <Link className="logo-box" to='/'>
@@ -137,7 +138,7 @@ class SignupForm extends React.Component {
           </form>
         </div>
 
-      </div>
+      // </div>
     )
   }
 }

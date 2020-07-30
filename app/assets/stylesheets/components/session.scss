@@ -1,50 +1,92 @@
 .login-box, .signup-box {
   margin: 0 auto;
-  padding: 24px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   background: white;
 
+  .logo-box {
+    text-align: center;
+
+    h1 {
+      color: #3f4040;
+    }
+
+    h3 {
+      color: #909090;
+    }
+  }
+
   form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
+
 }
 
 .login-box {
   width: 400px;
-  height: 560px;
+  padding: 24px 48px;
+  
+  .textbox {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+  }
+
+  hr {
+    width: 100%;
+    margin: 10% 0 5%;
+    border-bottom: .5px solid #ddd;
+  }
+  
+  .bottom {
+    margin-top: 16px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    color: #666666;
+    font-weight: bold;
+
+    :last-child {
+      color: #c60;
+      cursor: pointer;
+    }
+  }
 }
 
 .signup-box {
   width: 600px;
-  height: 740px;
+  padding: 24px 16px;
 
   font-size: 14px;
+
+  form {
+    width: 570px;
+  }
 }
 
-.logo-box {
+.button {
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
   text-align: center;
-
-  h1 {
-    color: #3f4040;
-  }
-
-  h3 {
-    color: #909090;
-  }
+  color: white;
 }
 
-.login-box form {
-  width: 360px;
- 
-  color: #cccccc;
-}
+.demo-login {
+  width: 100%;
+  margin: 16px 0 32px 0;
+  background-color: #354d89;
 
-.signup-box form {
-  width: 570px;
+  :hover {
+    background : #2b3e6e;
+    cursor: pointer;
+  }
 }

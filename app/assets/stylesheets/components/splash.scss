@@ -38,19 +38,21 @@ body {
   color: white;
 }
 
-.masthead-content h1, .logo-box h1, .signin-logo-box h1 {
+.logo-box h1, .signin-logo-box h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
-  font-weight: 800;
+  font-weight: bold;
   text-transform: uppercase;
+  transform: scale(1, 1.2);
 }
 
-.masthead-content h3, .logo-box h3 {
+.logo-box h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .masthead-content h2 {

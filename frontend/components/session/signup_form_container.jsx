@@ -15,7 +15,7 @@ const mdp = dispatch => {
     submitForm: user => dispatch(signup(user)),
     dispatchErrors: errors => dispatch(receiveSessionErrors(errors)),
     clearErrors: () => dispatch(clearSessionErrors()),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   }
 }
 

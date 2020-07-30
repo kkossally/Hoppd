@@ -3,6 +3,18 @@
   height: 95px;
   border-bottom: solid 1px #e2e2e2;
   background: #f9f9f9;
+
+  .search-container {
+    display: flex;
+    padding: 8px;
+    background-color: #fff;
+
+    img {
+      height: 75%;
+      align-self: center;
+      filter: invert(80%);
+    }
+  }
 }
 
 .big-searchbar form {
@@ -17,6 +29,7 @@
   width: 100%;
   height: 100%;
   border: 1px solid #eee;
+  display: flex;
 }
 
 .big-searchbar .search-container input {

@@ -46,8 +46,7 @@ class SignupForm extends React.Component {
     const birthday = year + month + day;
     const user = Object.assign({}, this.state, { birthday });
     if (this.state.password === this.state.password_confirmation) {
-      this.props.submitForm(user);
-      this.props.closeModal();
+      this.props.submitForm(user).then(this.props.closeModal);
     } else {
       this.props.dispatchErrors(['Please confirm your password.']);
     }

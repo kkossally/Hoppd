@@ -1,4 +1,4 @@
-import { RECEIVE_FAVORITE_ERRORS, CLEAR_FAVORITE_ERRORS, RECEIVE_FAVORITE } from '../actions/favorite_actions';
+import { RECEIVE_FAVORITE_ERRORS, CLEAR_FAVORITE_ERRORS, RECEIVE_FAVORITES } from '../actions/favorite_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);
@@ -7,7 +7,7 @@ export default (state = [], action) => {
     case RECEIVE_FAVORITE_ERRORS:
       return action.favoriteErrors;
 
-    case RECEIVE_FAVORITE:
+    case RECEIVE_FAVORITES:
       return [];
 
     case CLEAR_FAVORITE_ERRORS:

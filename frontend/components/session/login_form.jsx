@@ -21,8 +21,7 @@ class LoginForm extends React.Component {
     event.preventDefault();
     const user = Object.assign({}, this.state)
     this.props.clearErrors();
-    this.props.submitForm(user);
-    this.props.closeModal;
+    this.props.submitForm(user).then(this.props.closeModal);
   }
 
   demoLogin() {

@@ -75,7 +75,9 @@ class BeerShow extends React.Component {
         <div className="top">
           <div className="info">
             <div className="basic-info">
-              <img className="logo" src={logoURL} alt="Beer Logo"/>
+              <div className="basic-info-logo-box">
+                <img className="logo" src={logoURL} alt="Beer Logo"/>
+              </div>
               <div className="name">
                 <h1>{name}</h1>
                 <h2>{brewery}</h2>

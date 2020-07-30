@@ -4,15 +4,9 @@ import { Link } from 'react-router-dom';
 import { deleteFavorite } from '../../actions/favorite_actions';
 
 const msp = state => {
-  const favorite_beer_ids = state.entities.users[state.session.id].favorite_beer_ids;
+  const favoriteBeerIds = state.entities.users[state.session.id].favorite_beer_ids;
   return {
-    favoriteBeers: Object.values(state.entities.beers).filter(beer => favorite_beer_ids.includes(beer.id)),
-  }
-}
-
-const mdp = dispatch => {
-  return {
-    deleteFavorite: id => dispatch(deleteFavorite(id)),
+    favoriteBeers: Object.values(state.entities.beers).filter(beer => favoriteBeerIds.includes(beer.id)),
   }
 }
 
@@ -31,7 +25,9 @@ class Favorites extends React.Component {
       return (
         <div key={beer.id} className="beer-info-box">
           <div className="basic-info">
-            <Link to={`/beers/${beer.id}`}><img className="logo" src={beer.logoURL} alt="Beer Logo" /></Link>
+            <div className="basic-info-logo-box">
+              <Link to={`/beers/${beer.id}`}><img className="logo" src={beer.logoURL} alt="Beer Logo" /></Link>
+            </div>
             <div className="name">
               <Link to={`/beers/${beer.id}`}><h1>{beer.name}</h1></Link>
               <h2>{beer.brewery}</h2>
@@ -49,4 +45,4 @@ class Favorites extends React.Component {
   }
 }
 
-export default connect(msp, mdp)(Favorites)
+export default connect(msp)(Favorites)

@@ -5,7 +5,8 @@ class Api::FavoritesController < ApplicationController
     @favorite = Favorite.new(favorite_params)
     @favorite.user_id = current_user.id
     if @favorite.save
-      render json: {}
+      @user = current_user
+      render "api/users/show"
     else
       render json: @favorite.errors.full_messages, status: 422
     end
@@ -15,7 +16,8 @@ class Api::FavoritesController < ApplicationController
     favorite = Favorite.find_by(id: params[:id])
     if favorite
       favorite.destroy
-      render json: {}
+      @user = current_user
+      render "api/users/show"
     else
       render json: 'Favorite not found', status: 404
     end

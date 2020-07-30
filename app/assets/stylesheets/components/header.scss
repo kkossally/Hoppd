@@ -179,7 +179,7 @@ header.internal {
         img {
           height: 45%;
           margin: auto 5px;
-          -webkit-filter: invert(80%);
+          filter: invert(80%);
         }
         
         .search-results {

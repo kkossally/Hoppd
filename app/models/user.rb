@@ -20,6 +20,8 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, :f_name, :l_name, :birthday, presence: true
   validates :password, length: { minimum: 5 }, allow_nil: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validate :drinking_age
   # validates :password, confirmation: true
   # validates :password_confirmation, presence: true
   # validate :password_confirmation_match
@@ -47,6 +49,12 @@ class User < ApplicationRecord
   #     errors.add(:passwords, "must match.")
   #   end
   # end
+
+  def drinking_age
+    if birthday && ( (Date.today - birthday).to_i / 365 ) < 21
+      errors.add(:birthday, "must be 21 years ago")
+    end
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

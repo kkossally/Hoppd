@@ -11,9 +11,9 @@ User.delete_all
 Brewery.delete_all
 Beer.delete_all
 
-user1 = User.create!(username: 'jbarnes', email: 'jbarnes@example.com', password:'hiphop', f_name: 'Julian', l_name: 'Barnes', birthday: "19460119")
-user2 = User.create!(username: 'gbrooks', email: 'gbrooks@example.com', password:'hiphop', f_name: 'Gwendolyn', l_name: 'brooks', birthday: "19170607")
-user3 = User.create!(username: 'ngeiman', email: 'ngaiman@example.com', password:'hiphop', f_name: 'Neil', l_name: 'Gaiman', birthday: "19601110")
+user1 = User.create!(username: 'jbarnes', email: 'jbarnes@example.com', password:'hiphop', f_name: 'Julian', l_name: 'Barnes', birthday: Date.parse("19460119"))
+user2 = User.create!(username: 'gbrooks', email: 'gbrooks@example.com', password:'hiphop', f_name: 'Gwendolyn', l_name: 'brooks', birthday: Date.parse("19170607"))
+user3 = User.create!(username: 'ngeiman', email: 'ngaiman@example.com', password:'hiphop', f_name: 'Neil', l_name: 'Gaiman', birthday: Date.parse("19601110"))
 
 Brewery.create!(name: 'Huyghe Brewery', brewery_type: 'Micro Brewery', locale: 'Melle, Vlaanderen Belgium')
 Brewery.create!(name: 'Magic Hat Brewing Company', brewery_type: 'Regional Brewery', locale: 'South Burlington, VT United States')

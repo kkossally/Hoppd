@@ -5,6 +5,7 @@ import { closeModal } from '../../actions/modal_actions';
 import SignupForm from './signup_form';
 
 const msp = ({ errors: { session } }) => {
+  debugger
   return {
     errors: formatSignupFormErrors(session),
     formType: 'Create Account',

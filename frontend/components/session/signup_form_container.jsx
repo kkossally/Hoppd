@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { signup, receiveSessionErrors, clearSessionErrors } from '../../actions/session_actions';
+import { ERROR_MESSAGES, formatSignupFormErrors } from '../../reducers/selectors';
 import { closeModal } from '../../actions/modal_actions';
 import SignupForm from './signup_form';
 
 const msp = ({ errors: { session } }) => {
   return {
-    errors: session,
+    errors: formatSignupFormErrors(session),
     formType: 'Create Account',
   }
 }

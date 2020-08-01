@@ -11,6 +11,5 @@ export const ERROR_MESSAGES = {
 }
 
 export const formatSignupFormErrors = ( session ) => {
-  debugger
  return session.map( error => ERROR_MESSAGES[error] || error )
 }

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: favorites
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null

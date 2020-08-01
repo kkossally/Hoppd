@@ -1,5 +1,4 @@
 class Api::CheckinsController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def create
     @checkin = Checkin.new(checkin_params)

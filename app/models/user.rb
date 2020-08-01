@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #  f_name          :string           not null
 #  l_name          :string           not null
-#  birthday        :string           not null
+#  birthday        :date             not null
 #
 
 class User < ApplicationRecord
@@ -51,7 +51,7 @@ class User < ApplicationRecord
   # end
 
   def drinking_age
-    if birthday && ( (Date.today - birthday).to_i / 365 ) < 21
+    if birthday && (( (Date.today - birthday).to_i / 365 ) < 21)
       errors.add(:birthday, "must be 21 years ago")
     end
   end

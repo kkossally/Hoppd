@@ -1,3 +1,27 @@
+.button {
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+
+.submit {
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    background-color: #f4b800;
+    cursor: pointer;
+  }
+}
+
 .login-box, .signup-box {
   margin: 0 auto;
   display: flex;
@@ -17,13 +41,31 @@
     }
   }
 
+  .errors {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 2px;
+    background: #e25858;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    
+    ul {
+      width: 100%;
+    }
+  }
+
   form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
+    ::placeholder, .select-date label, .select-date .empty {
+      color: #cccccc;
+    }
+  }
 }
 
 .login-box {
@@ -38,10 +80,6 @@
     border-radius: 5px;
     font-size: 16px;
     color: black;
-  }
-
-  .submit {
-    margin-top: 5%;
   }
 
   hr {
@@ -73,24 +111,77 @@
 
   form {
     width: 570px;
-  }
-}
 
-.button {
-  padding: 12px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  color: white;
+    .submit { width: 50%; }
+  }
+  .info-section {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .textbox, .select-date {
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    width: 45%;
+    height: 33px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+  }
+
+  .select-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+  }
+
+  .select-span {
+    position: relative;
+    
+    ::after {
+      margin: 0 10px 0 5px;
+      content: "▼";
+      color: #ffcc00;
+      font-size: 11px;
+    }
+  }
+
+  .field-req {
+    margin-bottom: 16px;
+    padding: 15px;
+    color: #666666;
+    font-weight: bold;
+  }
+
+  .pass-req {
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .terms {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
 }
 
 .demo-login {
   width: 100%;
-  margin: 16px 0 32px 0;
+  margin: 16px 0;
   background-color: #354d89;
 
-  :hover {
+  &:hover {
     background : #2b3e6e;
     cursor: pointer;
   }
